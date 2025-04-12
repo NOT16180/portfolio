@@ -12,18 +12,18 @@ footer {
   text-align: center;
 }
 
+/* Conteneur des boîtes, centré et flexible */
 .container {
-  width: 90%;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  width: 100%;
   padding: 50px;
   margin: 100px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap; /* Permet aux éléments de s'adapter si l'écran est plus petit */
 }
 
 .box {
-  width: 350px;
+  width: 350px; /* Taille des boîtes */
   margin: 0 10px;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
   transition: 1s;
@@ -42,10 +42,9 @@ footer {
 
 /* Bouton "home" */
 .button-home {
-  left: 10px;
-  top: 10px;
-  z-index: 1;
   position: fixed;
+  top: 20px; /* Éloigné du haut */
+  left: 20px; /* Éloigné du côté gauche */
   font-size: 150%;
   font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
@@ -57,7 +56,6 @@ footer {
   border: solid;
   border-color: black;
   display: block;
-  will-change: transform;
   transition: transform 450ms;
 }
 
@@ -80,7 +78,6 @@ footer {
   cursor: pointer;
   color: black;
   opacity: 0.7;
-  transition: transform 125ms;
   border-radius: 10px;
   transform: translateX(-7px);
 }
@@ -90,47 +87,44 @@ footer {
   transform: scaleY(1);
 }
 
-/* Navigation */
-nav {
-  margin: 20px;
-  padding: 20px;
-}
-
 /* Media Queries pour adapter la page aux différents écrans */
 
 /* Pour les tablettes (max-width: 1024px) */
 @media (max-width: 1024px) {
   .container {
-    flex-direction: column; /* Les éléments s'empilent sur les petits écrans */
+    flex-direction: row; /* Les éléments restent côte à côte */
     padding: 30px;
     margin: 50px auto;
   }
 
   .box {
-    width: 80%;
+    width: 80%; /* Réduit la taille des boîtes */
     margin: 10px 0;
   }
 
   .button-home {
     font-size: 130%;
+    padding: 0.4em 0.8em;
   }
 }
 
 /* Pour les petits écrans (smartphones, max-width: 768px) */
 @media (max-width: 768px) {
   .container {
+    flex-direction: row; /* Les éléments restent côte à côte */
     padding: 20px;
     margin: 30px auto;
   }
 
   .box {
-    width: 90%;
+    width: 90%; /* Réduit encore la taille des boîtes */
     margin: 10px 0;
   }
 
   .button-home {
     font-size: 120%;
-    bottom: 15px;
+    padding: 0.3em 0.7em; /* Réduit le padding */
+    bottom: 15px; /* Positionne correctement le bouton */
     left: 15px;
   }
 }
@@ -138,18 +132,20 @@ nav {
 /* Pour les très petits écrans (smartphones très petits, max-width: 480px) */
 @media (max-width: 480px) {
   .container {
+    flex-direction: row; /* Les éléments restent côte à côte */
     padding: 15px;
     margin: 20px auto;
   }
 
   .box {
-    width: 100%;
+    width: 100%; /* Les boîtes prennent toute la largeur */
     margin: 10px 0;
   }
 
   .button-home {
     font-size: 110%;
-    bottom: 10px;
+    padding: 0.2em 0.6em;
+    bottom: 10px; /* Positionne le bouton en bas à gauche */
     left: 10px;
   }
 }

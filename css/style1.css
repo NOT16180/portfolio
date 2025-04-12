@@ -7,9 +7,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centre tout le contenu horizontalement */
-  justify-content: center; /* Centre tout le contenu verticalement */
+  justify-content: flex-start; /* Début du contenu verticalement */
   height: 100vh; /* Utilise toute la hauteur de la fenêtre */
   margin: 0;
+  position: relative; /* Nécessaire pour positionner les icônes en bas */
 }
 
 /* Boîte (bouton) */
@@ -59,6 +60,15 @@ body {
   opacity: 0.5;
 }
 
+/* Conteneur des icônes sociales */
+.social-links {
+  position: absolute; /* Pour les positionner en bas de la page */
+  bottom: 20px; /* Distance par rapport au bas de la page */
+  display: flex;
+  justify-content: center; /* Centrer les icônes */
+  width: 100%; /* Prend toute la largeur de la page */
+}
+
 /* Icônes font-awesome */
 .fa {
   padding: 15px; /* Augmente le padding pour créer un cercle autour des icônes */
@@ -85,12 +95,6 @@ body {
   color: white; /* Couleur de l'icône */
 }
 
-/* Alignement des icônes sociales sous le bouton */
-.social-links {
-  display: flex;
-  justify-content: center; /* Centrer les icônes */
-  margin-top: 20px; /* Espacement entre le bouton et les icônes */
-}
 /* Navigation */
 nav {
   margin: 20px;
