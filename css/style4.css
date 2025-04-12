@@ -1,0 +1,126 @@
+body {
+    font-family: 'JetBrains Mono', monospace;
+
+    text-align: center;
+}
+
+
+.button-49 {
+    z-index: 1;
+    position: fixed;
+    font-size: 150%;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    padding: 0.5em 1em;
+    outline: none;
+    border: double;
+    border-radius: 10px;
+    border-color: black;
+    background-color: hsl(0, 0%, 0%);
+
+    display: block;
+
+    right: 10px;
+    bottom: 10px;
+    will-change: transform;
+    transition: transform 450ms;
+
+
+}
+
+button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #ffffff;
+    transform-origin: center top;
+    transform: scaleY(0);
+
+    transition: transform 0.25s ease-in-out;
+}
+
+.button-49:hover {
+    cursor: pointer;
+    color: black;
+    transition: transform 125ms;
+
+    transform: translateY(-7px)
+}
+
+.button-49:hover::before {
+    transform-origin: center bottom;
+    transform: scaleY(1);
+}
+
+
+.button-home {
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    position: fixed;
+    font-size: 150%;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+
+    color: rgb(255, 255, 255);
+    padding: 0.5em 1em;
+    outline: none;
+
+
+    background-color: hsl(0, 0%, 0%);
+    border: solid;
+
+    border-color: black;
+    display: block;
+
+
+    will-change: transform;
+    transition: transform 450ms;
+
+}
+
+.button-home::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    border-radius: 10px;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    background-color: #ffffff;
+    transform-origin: right;
+    transform: scaleX(0);
+
+    transition: transform 0.25s ease-in-out;
+}
+
+.button-home:hover {
+    cursor: pointer;
+    color: black;
+    border-radius: 10px;
+    opacity: 0.7;
+    transition: transform 125ms;
+
+    transform: translateX(-7px)
+}
+
+.button-home:hover::before {
+    transform-origin: right left;
+    transform: scaleY(1);
+}
+
+
+
+
