@@ -1,44 +1,41 @@
 <!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoT - Timelapses</title>
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>timelapse</title>
-    <link rel="stylesheet" href="css/style4.css">
-
-</head>
-
-<body>
-
-
-    <nav>
-        
-        
+  <body>
+    <header>
+      <nav>
         <a href="index.html">home</a>
-    
-    
         <a href="selection.html">portfolio</a>
-    
+      </nav>
+    </header>
 
+    <main>
+      <video
+        width="880"
+        height="1150"
+        controls
+        preload="metadata"
+        poster="images/video-poster.webp"
+      >
+        <source src="video/illu1.webm" type="video/webm" />
+        <source src="video/illu1.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </main>
 
-</nav>
+    <footer>
+      <p>©2023 Darren Chauvet. Tous droits réservés.</p>
+    </footer>
 
+    <a href="#top" class="button-top">↑</a>
+    <a href="selection.html" class="button-home">←</a>
 
-    <button class="button-49">↑</button>
-    <a href="selection.html"><button class="button-home">←</button></a>
-
-
-
-    <video width="880" height="1150" controls>
-        <source src="video/illu1.mp4" type=video/mp4>
-        format not supported
-    </video>
-
-    <script src="script.js"></script>
-
-
-    <p class="right">©2019 Darren Chauvet. All Rights Reserved.</p>
-
-</body>
-
+    <script src="js/main.min.js" defer></script>
+  </body>
 </html>
