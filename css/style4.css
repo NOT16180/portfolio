@@ -1,126 +1,138 @@
+/* Styles généraux */
 body {
-    font-family: 'JetBrains Mono', monospace;
-
-    text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
 }
 
-
+/* Bouton 49 */
 .button-49 {
-    z-index: 1;
-    position: fixed;
-    font-size: 150%;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    padding: 0.5em 1em;
-    outline: none;
-    border: double;
-    border-radius: 10px;
-    border-color: black;
-    background-color: hsl(0, 0%, 0%);
-
-    display: block;
-
-    right: 10px;
-    bottom: 10px;
-    will-change: transform;
-    transition: transform 450ms;
-
-
+  z-index: 1;
+  position: fixed;
+  font-size: 150%;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  padding: 0.5em 1em;
+  outline: none;
+  border: double;
+  border-radius: 10px;
+  border-color: black;
+  background-color: hsl(0, 0%, 0%);
+  display: block;
+  right: 10px;
+  bottom: 10px;
+  will-change: transform;
+  transition: transform 450ms;
 }
 
-button::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    background-color: #ffffff;
-    transform-origin: center top;
-    transform: scaleY(0);
-
-    transition: transform 0.25s ease-in-out;
+.button-49::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  transform-origin: center top;
+  transform: scaleY(0);
+  transition: transform 0.25s ease-in-out;
 }
 
 .button-49:hover {
-    cursor: pointer;
-    color: black;
-    transition: transform 125ms;
-
-    transform: translateY(-7px)
+  cursor: pointer;
+  color: black;
+  transition: transform 125ms;
+  transform: translateY(-7px);
 }
 
 .button-49:hover::before {
-    transform-origin: center bottom;
-    transform: scaleY(1);
+  transform-origin: center bottom;
+  transform: scaleY(1);
 }
 
-
+/* Bouton home */
 .button-home {
-    left: 10px;
-    top: 10px;
-    z-index: 1;
-    border-radius: 10px;
-    position: fixed;
-    font-size: 150%;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-
-    color: rgb(255, 255, 255);
-    padding: 0.5em 1em;
-    outline: none;
-
-
-    background-color: hsl(0, 0%, 0%);
-    border: solid;
-
-    border-color: black;
-    display: block;
-
-
-    will-change: transform;
-    transition: transform 450ms;
-
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+  border-radius: 10px;
+  position: fixed;
+  font-size: 150%;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  padding: 0.5em 1em;
+  outline: none;
+  background-color: hsl(0, 0%, 0%);
+  border: solid;
+  border-color: black;
+  display: block;
+  will-change: transform;
+  transition: transform 450ms;
 }
 
 .button-home::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    border-radius: 10px;
-
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-
-    background-color: #ffffff;
-    transform-origin: right;
-    transform: scaleX(0);
-
-    transition: transform 0.25s ease-in-out;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
 }
 
 .button-home:hover {
-    cursor: pointer;
-    color: black;
-    border-radius: 10px;
-    opacity: 0.7;
-    transition: transform 125ms;
-
-    transform: translateX(-7px)
+  cursor: pointer;
+  color: black;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: transform 125ms;
+  transform: translateX(-7px);
 }
 
 .button-home:hover::before {
-    transform-origin: right left;
-    transform: scaleY(1);
+  transform-origin: right left;
+  transform: scaleY(1);
 }
 
+/* Media Queries pour les petits écrans */
 
+/* Tablettes */
+@media (max-width: 1024px) {
+  .button-49,
+  .button-home {
+    font-size: 130%;
+    padding: 0.4em 0.8em;
+    bottom: 15px;
+    right: 15px;
+  }
+}
 
+/* Smartphones */
+@media (max-width: 768px) {
+  .button-49,
+  .button-home {
+    font-size: 120%;
+    padding: 0.3em 0.6em;
+    bottom: 10px;
+    right: 10px;
+  }
+}
 
+/* Très petits écrans (smartphones très compacts) */
+@media (max-width: 480px) {
+  .button-49,
+  .button-home {
+    font-size: 110%;
+    padding: 0.2em 0.5em;
+    bottom: 5px;
+    right: 5px;
+  }
+}

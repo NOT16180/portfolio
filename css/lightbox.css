@@ -1,18 +1,20 @@
+/* Désactivation du défilement lors de l'ouverture de la lightbox */
 body.lb-disable-scrolling {
   overflow: hidden;
 }
 
+/* Overlay sombre derrière la lightbox */
 .lightboxOverlay {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 9999;
   background-color: black;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
   display: none;
 }
 
+/* Conteneur principal de la lightbox */
 .lightbox {
   position: absolute;
   left: 0;
@@ -24,14 +26,13 @@ body.lb-disable-scrolling {
   outline: none;
 }
 
+/* Image dans la lightbox */
 .lightbox .lb-image {
   display: block;
   height: auto;
   max-width: inherit;
   max-height: none;
   border-radius: 3px;
-
-  /* Image border */
   border: 4px solid white;
 }
 
@@ -39,16 +40,13 @@ body.lb-disable-scrolling {
   border: none;
 }
 
+/* Conteneur de l'image */
 .lb-outerContainer {
   position: relative;
-  zoom: 1;
   width: 250px;
   height: 250px;
   margin: 0 auto;
   border-radius: 4px;
-
-  /* Background color behind image.
-     This is visible during transitions. */
   background-color: white;
 }
 
@@ -58,6 +56,7 @@ body.lb-disable-scrolling {
   clear: both;
 }
 
+/* Loader (indicateur de chargement) */
 .lb-loader {
   position: absolute;
   top: 43%;
@@ -76,6 +75,7 @@ body.lb-disable-scrolling {
   background: url(../images/loading.gif) no-repeat;
 }
 
+/* Navigation (précédent/suivant) */
 .lb-nav {
   position: absolute;
   top: 0;
@@ -85,20 +85,20 @@ body.lb-disable-scrolling {
   z-index: 10;
 }
 
-.lb-container>.nav {
-  left: 0;
-}
-
 .lb-nav a {
   outline: none;
-  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
 }
 
+/* Précédent */
 .lb-prev,
 .lb-next {
   height: 100%;
   cursor: pointer;
   display: block;
+  transition:
+    opacity 0.6s,
+    transform 0.3s;
 }
 
 .lb-nav a.lb-prev {
@@ -106,41 +106,32 @@ body.lb-disable-scrolling {
   left: 0;
   float: left;
   background: url(../images/prev.png) left 48% no-repeat;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
 }
 
 .lb-nav a.lb-prev:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  transform: scale(1.1);
 }
 
+/* Suivant */
 .lb-nav a.lb-next {
   width: 64%;
   right: 0;
   float: right;
   background: url(../images/next.png) right 48% no-repeat;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: opacity 0.6s;
-  -moz-transition: opacity 0.6s;
-  -o-transition: opacity 0.6s;
-  transition: opacity 0.6s;
 }
 
 .lb-nav a.lb-next:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  transform: scale(1.1);
 }
 
+/* Conteneur des données (légende et info) */
 .lb-dataContainer {
   margin: 0 auto;
   padding-top: 5px;
-  zoom: 1;
   width: 100%;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -182,6 +173,7 @@ body.lb-disable-scrolling {
   color: #999999;
 }
 
+/* Bouton de fermeture */
 .lb-data .lb-close {
   display: block;
   float: right;
@@ -189,17 +181,11 @@ body.lb-disable-scrolling {
   height: 30px;
   background: url(../images/close.png) top right no-repeat;
   text-align: right;
-  outline: none;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  cursor: pointer;
   opacity: 0.7;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
 .lb-data .lb-close:hover {
-  cursor: pointer;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }

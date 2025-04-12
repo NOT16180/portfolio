@@ -1,120 +1,162 @@
 body {
-
-    background: url(../images/IMG_1741.JPG) no-repeat center center fixed;
-
-
-    background-color: #ffffff;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-    text-align: center;
-   
+  background: url(../images/IMG_1741.JPG) no-repeat center center fixed;
+  background-color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre tout le contenu horizontalement */
+  justify-content: center; /* Centre tout le contenu verticalement */
+  height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+  margin: 0;
 }
 
-
+/* Boîte (bouton) */
 .box {
-    width: 140px;
-    height: auto;
-    float: left;
-    transition: .5s linear;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 15px;
-    text-align: center;
-    margin: 20%;
-    border-radius: 10px;
-    background-color: #ffffff;
+  width: 140px;
+  height: auto;
+  transition: 0.5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 20px 0; /* Marge verticale pour l'espacement */
+  background-color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 900;
+}
 
-
-    text-transform: uppercase;
-    font-weight: 900;
+/* Effets avant et après sur la boîte */
+.box:before,
+.box:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .box:before {
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid transparent;
-    border-radius: 10px;
-    box-sizing: border-box;
-    transform: translateX(100%);
+  bottom: 0;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transform: translateX(100%);
 }
 
 .box:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-radius: 10px;
-    box-sizing: border-box;
-    transform: translateX(-100%);
+  top: 0;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  transform: translateX(-100%);
 }
 
+/* Effet au survol de la boîte */
 .box:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    opacity: 0.5;
-
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
 }
 
-
-
-button {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    background: transparent;
-}
-
-
-
-/* Style all font awesome icons */
+/* Icônes font-awesome */
 .fa {
-    padding: 10px;
-    font-size: 30px;
-    width: 15px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    position: relative;
-    margin: auto;
+  padding: 15px; /* Augmente le padding pour créer un cercle autour des icônes */
+  font-size: 30px;
+  width: 17px; /* Largeur de l'icône et de son cercle */
+  height: 17px; /* Hauteur de l'icône et de son cercle */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%; /* Crée un cercle parfait */
+  position: relative;
+  margin: 10px; /* Ajoute de l'espace entre les icônes */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centre l'icône dans le cercle */
+  background-color: #000000; /* Couleur de fond du cercle */
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-    opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
+/* Icônes spécifiques pour Instagram et Twitter */
 .fa-instagram {
-    background: #000000;
-    color: white;
+  color: white; /* Couleur de l'icône */
 }
 
-/* Twitter */
 .fa-twitter {
-    background: #000000;
-    color: white;
+  color: white; /* Couleur de l'icône */
 }
 
+/* Alignement des icônes sociales sous le bouton */
+.social-links {
+  display: flex;
+  justify-content: center; /* Centrer les icônes */
+  margin-top: 20px; /* Espacement entre le bouton et les icônes */
+}
+/* Navigation */
+nav {
+  margin: 20px;
+  padding: 20px;
+  text-align: center; /* Centre les liens de navigation */
+}
 
+/* Media Queries pour rendre le site responsive */
+@media (max-width: 1024px) {
+  /* Ajustement pour les tablettes */
+  .box {
+    width: 120px;
+    margin: 15%;
+  }
 
+  .fa {
+    font-size: 25px;
+  }
 
+  nav {
+    padding: 15px;
+  }
+}
 
-nav{
+@media (max-width: 768px) {
+  /* Ajustement pour les petits écrans (smartphones) */
+  .box {
+    width: 100px;
+    margin: 10%;
+    padding: 10px;
+  }
 
+  .fa {
+    font-size: 20px;
+    padding: 8px;
+  }
 
-    margin: 20px;
-    padding: 20px;
+  nav {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustement pour les très petits écrans (téléphones) */
+  .box {
+    width: 80px;
+    margin: 5%;
+    padding: 8px;
+  }
+
+  .fa {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  nav {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  body {
+    font-size: 12px;
+  }
 }

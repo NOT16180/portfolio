@@ -1,120 +1,155 @@
-.intro{
-    font-family: 'JetBrains Mono', monospace;
-
-    text-align: center;
+/* Styles généraux */
+.intro {
+  font-family: "JetBrains Mono", monospace;
+  text-align: center;
 }
 
-
-
-
 footer {
-
-    text-align: center;
+  text-align: center;
 }
 
 .block {
-    text-align: center;
+  text-align: center;
 }
 
 .container {
-    width: 90%;
-    padding: 50px;
-    margin: 100px auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+  width: 90%;
+  padding: 50px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* Permet aux éléments de s'adapter si l'écran est plus petit */
 }
 
-
 .box {
-    width: 350px;
-    margin: 0 10px;
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
-    transition: 1s;
-    border-radius: 10px;
-
+  width: 350px;
+  margin: 0 10px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+  border-radius: 10px;
 }
 
 .box img {
-    display: block;
-    width: 100%;
-
+  display: block;
+  width: 100%;
 }
 
 .box:hover {
-    transform: scale(1.05);
-    z-index: 2;
-
+  transform: scale(1.05);
+  z-index: 2;
 }
 
+/* Bouton "home" */
 .button-home {
-    left: 10px;
-    top: 10px;
-    z-index: 1;
-    position: fixed;
-    font-size: 150%;
-    font-family: 'JetBrains Mono', monospace;
-    text-transform: uppercase;
-    border-radius: 10px;
-
-    color: rgb(255, 255, 255);
-    padding: 0.5em 1em;
-    outline: none;
-
-
-    background-color: hsl(0, 0%, 0%);
-    border: solid;
-
-    border-color: black;
-    display: block;
-
-
-    will-change: transform;
-    transition: transform 450ms;
-
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+  position: fixed;
+  font-size: 150%;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  padding: 0.5em 1em;
+  outline: none;
+  background-color: hsl(0, 0%, 0%);
+  border: solid;
+  border-color: black;
+  display: block;
+  will-change: transform;
+  transition: transform 450ms;
 }
 
 .button-home::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 10px;
-
-
-    background-color: #ffffff;
-    transform-origin: right;
-    transform: scaleX(0);
-
-    transition: transform 0.25s ease-in-out;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
 }
 
 .button-home:hover {
-    cursor: pointer;
-    color: black;
-    opacity: 0.7;
-    transition: transform 125ms;
-    border-radius: 10px;
-
-    transform: translateX(-7px)
+  cursor: pointer;
+  color: black;
+  opacity: 0.7;
+  transition: transform 125ms;
+  border-radius: 10px;
+  transform: translateX(-7px);
 }
 
 .button-home:hover::before {
-    transform-origin: right left;
-    transform: scaleY(1);
+  transform-origin: right left;
+  transform: scaleY(1);
 }
 
+/* Navigation */
+nav {
+  margin: 20px;
+  padding: 20px;
+}
 
+/* Media Queries pour adapter la page aux différents écrans */
 
+/* Pour les tablettes (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Les éléments s'empilent sur les petits écrans */
+    padding: 30px;
+    margin: 50px auto;
+  }
 
-nav{
+  .box {
+    width: 80%;
+    margin: 10px 0;
+  }
 
+  .button-home {
+    font-size: 130%;
+  }
+}
 
-    margin: 20px;
+/* Pour les petits écrans (smartphones, max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
     padding: 20px;
+    margin: 30px auto;
+  }
+
+  .box {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .button-home {
+    font-size: 120%;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+/* Pour les très petits écrans (smartphones très petits, max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .box {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .button-home {
+    font-size: 110%;
+    bottom: 10px;
+    left: 10px;
+  }
 }
