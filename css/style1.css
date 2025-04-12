@@ -1,166 +1,179 @@
 body {
   background: url(../images/IMG_1741.JPG) no-repeat center center fixed;
+  background-size: cover;
   background-color: #ffffff;
   font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre tout le contenu horizontalement */
-  justify-content: flex-start; /* Début du contenu verticalement */
-  height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
   margin: 0;
-  position: relative; /* Nécessaire pour positionner les icônes en bas */
+  padding: 0;
+  position: relative;
 }
 
-/* Boîte (bouton) */
+/* Boîte (bouton) - Version mobile first */
 .box {
-  width: 140px;
+  width: 120px;
   height: auto;
-  transition: 0.5s linear;
+  transition: 0.3s ease;
   position: relative;
   display: block;
   overflow: hidden;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
-  margin: 20px 0; /* Marge verticale pour l'espacement */
+  margin: 15px 0;
   background-color: #ffffff;
-  text-transform: uppercase;
   font-weight: 900;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
-/* Effets avant et après sur la boîte */
 .box:before,
 .box:after {
   position: absolute;
   content: "";
   width: 100%;
-  height: 4px;
-  border-radius: 10px;
+  height: 3px;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
 .box:before {
   bottom: 0;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
   transform: translateX(100%);
 }
 
 .box:after {
   top: 0;
-  border-top: 4px solid transparent;
-  border-right: 4px solid transparent;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
   transform: translateX(-100%);
 }
 
-/* Effet au survol de la boîte */
 .box:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  opacity: 0.5;
-}
-
-/* Conteneur des icônes sociales */
-.social-links {
-  position: absolute; /* Pour les positionner en bas de la page */
-  bottom: 20px; /* Distance par rapport au bas de la page */
-  display: flex;
-  justify-content: center; /* Centrer les icônes */
-  width: 100%; /* Prend toute la largeur de la page */
-}
-
-/* Icônes font-awesome */
-.fa {
-  padding: 15px; /* Augmente le padding pour créer un cercle autour des icônes */
-  font-size: 30px;
-  width: 17px; /* Largeur de l'icône et de son cercle */
-  height: 17px; /* Hauteur de l'icône et de son cercle */
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%; /* Crée un cercle parfait */
-  position: relative;
-  margin: 10px; /* Ajoute de l'espace entre les icônes */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centre l'icône dans le cercle */
-  background-color: #000000; /* Couleur de fond du cercle */
-}
-
-/* Icônes spécifiques pour Instagram et Twitter */
-.fa-instagram {
-  color: white; /* Couleur de l'icône */
-}
-
-.fa-twitter {
-  color: white; /* Couleur de l'icône */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
 }
 
 /* Navigation */
 nav {
-  margin: 20px;
-  padding: 20px;
-  text-align: center; /* Centre les liens de navigation */
+  margin: 15px 0;
+  padding: 15px 0;
+  width: 100%;
 }
 
-/* Media Queries pour rendre le site responsive */
-@media (max-width: 1024px) {
-  /* Ajustement pour les tablettes */
+/* Social links - version mobile */
+.social-links {
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.fa {
+  padding: 12px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.fa:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries - Approche mobile first */
+
+/* Pour les écrans plus larges que les mobiles */
+@media (min-width: 481px) {
   .box {
-    width: 120px;
-    margin: 15%;
+    width: 140px;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .box:before,
+  .box:after {
+    height: 4px;
   }
 
   .fa {
-    font-size: 25px;
-  }
-
-  nav {
     padding: 15px;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
   }
 }
 
-@media (max-width: 768px) {
-  /* Ajustement pour les petits écrans (smartphones) */
+/* Pour les tablettes */
+@media (min-width: 768px) {
+  .box {
+    width: 160px;
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  .social-links {
+    bottom: 25px;
+  }
+
+  .fa {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+  }
+}
+
+/* Pour les grands écrans */
+@media (min-width: 1024px) {
+  .box {
+    width: 180px;
+    padding: 20px;
+  }
+
+  .box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Pour les très petits téléphones */
+@media (max-width: 360px) {
   .box {
     width: 100px;
-    margin: 10%;
     padding: 10px;
-  }
-
-  .fa {
-    font-size: 20px;
-    padding: 8px;
-  }
-
-  nav {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ajustement pour les très petits écrans (téléphones) */
-  .box {
-    width: 80px;
-    margin: 5%;
-    padding: 8px;
-  }
-
-  .fa {
-    font-size: 18px;
-    padding: 6px;
-  }
-
-  nav {
-    margin: 5px;
-    padding: 5px;
-  }
-
-  body {
     font-size: 12px;
+  }
+
+  .fa {
+    padding: 10px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0 8px;
+  }
+
+  .social-links {
+    bottom: 10px;
   }
 }
