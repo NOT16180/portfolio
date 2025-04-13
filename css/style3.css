@@ -4,43 +4,39 @@ body {
   margin: 0;
   background-color: white;
   color: #282828;
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* Styles généraux */
-.intro {
-  font-family: "JetBrains Mono", monospace;
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-}
-
+.intro,
+footer,
 .block {
   text-align: center;
 }
 
-/* Conteneur des boîtes, centré et flexible */
-
 .container {
   display: flex;
-  justify-content: center; /* Centrage horizontal */
-  align-items: center; /* Centrage vertical */
-  flex-wrap: wrap; /* Si besoin, les boîtes passent à la ligne */
-  min-height: 100vh; /* Hauteur minimum : toute la fenêtre */
-  width: 100%;
-  padding: 50px;
-  margin: 0; /* Supprime le margin qui poussait vers le bas */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 100vh; /* Prend exactement toute la hauteur de la fenêtre */
+  width: 50%;
+  margin: 0 auto; /* Centre horizontalement dans la page */
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto; /* Si le contenu déborde, on peut scroller à l'intérieur */
 }
 
 .box {
-  width: 600px; /* Taille des boîtes */
+  max-height: 90vh; /* Pour ne pas dépasser la fenêtre */
+  overflow: auto; /* Scroll interne si besoin */
+  width: 100%;
   margin: 0 10px;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
   transition: 1s;
   border-radius: 10px;
 }
-
 .box img {
   display: block;
   width: 100%;
