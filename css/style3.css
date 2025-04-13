@@ -1,3 +1,4 @@
+/* --- Réglages de base --- */
 html,
 body {
   height: 100%;
@@ -7,42 +8,65 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 
-/* Styles généraux */
+/* Texte centré */
 .intro,
 footer,
 .block {
   text-align: center;
 }
 
+/* --- Conteneur centré --- */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
-  height: 100vh; /* Prend exactement toute la hauteur de la fenêtre */
+  min-height: 100vh;
   width: 50%;
-  margin: 0 auto; /* Centre horizontalement dans la page */
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  overflow: auto; /* Si le contenu déborde, on peut scroller à l'intérieur */
+  overflow: auto;
 }
 
+/* --- Boîtes avec ombre et transition --- */
 .box {
-  max-height: 90vh; /* Pour ne pas dépasser la fenêtre */
-  overflow: auto; /* Scroll interne si besoin */
   width: 100%;
-  margin: 0 10px;
+  max-width: 600px;
+  margin: 10px;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
-  transition: 1s;
+  transition: transform 1s;
   border-radius: 10px;
 }
+
+/* --- Images --- */
 .box img {
   display: block;
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
+/* --- Hover --- */
 .box:hover {
   transform: scale(1.05);
   z-index: 2;
+}
+
+/* --- Responsive mobile --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .box img {
+    max-height: 300px;
+    object-fit: cover;
+  }
 }
