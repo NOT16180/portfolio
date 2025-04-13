@@ -43,8 +43,10 @@ footer,
 .box img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: cover;
+
+  height: auto; /* ← conserve le ratio sans s'étirer */
+  max-height: 300px; /* ← limite la hauteur sur mobile */
+  object-fit: cover; /* ← rend le cadrage propre si nécessaire */
 }
 
 /* --- Hover --- */
