@@ -139,3 +139,13 @@ button::before {
   transform-origin: right left;
   transform: scaleY(1);
 }
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img {
+    max-width: 100%;
+  }
+}
