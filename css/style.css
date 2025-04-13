@@ -2,6 +2,8 @@ body {
   text-align: center;
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
+  background-color: white;
+  color: #282828;
 }
 
 .container {

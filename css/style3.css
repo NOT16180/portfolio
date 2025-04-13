@@ -1,3 +1,11 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: white;
+  color: #282828;
+}
+
 /* Styles généraux */
 .intro {
   font-family: "JetBrains Mono", monospace;
@@ -13,17 +21,20 @@ footer {
 }
 
 /* Conteneur des boîtes, centré et flexible */
+
 .container {
   display: flex;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+  flex-wrap: wrap; /* Si besoin, les boîtes passent à la ligne */
+  min-height: 100vh; /* Hauteur minimum : toute la fenêtre */
   width: 100%;
   padding: 50px;
-  margin: 100px auto;
+  margin: 0; /* Supprime le margin qui poussait vers le bas */
 }
 
 .box {
-  width: 350px; /* Taille des boîtes */
+  width: 600px; /* Taille des boîtes */
   margin: 0 10px;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
   transition: 1s;
@@ -38,114 +49,4 @@ footer {
 .box:hover {
   transform: scale(1.05);
   z-index: 2;
-}
-
-/* Bouton "home" */
-.button-home {
-  position: fixed;
-  top: 20px; /* Éloigné du haut */
-  left: 20px; /* Éloigné du côté gauche */
-  font-size: 150%;
-  font-family: "JetBrains Mono", monospace;
-  text-transform: uppercase;
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  padding: 0.5em 1em;
-  outline: none;
-  background-color: hsl(0, 0%, 0%);
-  border: solid;
-  border-color: black;
-  display: block;
-  transition: transform 450ms;
-}
-
-.button-home::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 10px;
-  background-color: #ffffff;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.25s ease-in-out;
-}
-
-.button-home:hover {
-  cursor: pointer;
-  color: black;
-  opacity: 0.7;
-  border-radius: 10px;
-  transform: translateX(-7px);
-}
-
-.button-home:hover::before {
-  transform-origin: right left;
-  transform: scaleY(1);
-}
-
-/* Media Queries pour adapter la page aux différents écrans */
-
-/* Pour les tablettes (max-width: 1024px) */
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: row; /* Les éléments restent côte à côte */
-    padding: 30px;
-    margin: 50px auto;
-  }
-
-  .box {
-    width: 80%; /* Réduit la taille des boîtes */
-    margin: 10px 0;
-  }
-
-  .button-home {
-    font-size: 130%;
-    padding: 0.4em 0.8em;
-  }
-}
-
-/* Pour les petits écrans (smartphones, max-width: 768px) */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: row; /* Les éléments restent côte à côte */
-    padding: 20px;
-    margin: 30px auto;
-  }
-
-  .box {
-    width: 90%; /* Réduit encore la taille des boîtes */
-    margin: 10px 0;
-  }
-
-  .button-home {
-    font-size: 120%;
-    padding: 0.3em 0.7em; /* Réduit le padding */
-    bottom: 15px; /* Positionne correctement le bouton */
-    left: 15px;
-  }
-}
-
-/* Pour les très petits écrans (smartphones très petits, max-width: 480px) */
-@media (max-width: 480px) {
-  .container {
-    flex-direction: row; /* Les éléments restent côte à côte */
-    padding: 15px;
-    margin: 20px auto;
-  }
-
-  .box {
-    width: 100%; /* Les boîtes prennent toute la largeur */
-    margin: 10px 0;
-  }
-
-  .button-home {
-    font-size: 110%;
-    padding: 0.2em 0.6em;
-    bottom: 10px; /* Positionne le bouton en bas à gauche */
-    left: 10px;
-  }
 }
