@@ -2,8 +2,6 @@ body {
   text-align: center;
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
@@ -22,7 +20,6 @@ body {
 }
 
 .gallery img {
-  border-radius: 10px;
   width: 100%;
 }
 
@@ -34,60 +31,42 @@ body {
   transition: 0.5s;
 }
 
-/* Styles pour les boutons carrés avec bords arrondis */
-.button-49,
-.button-home {
+.button-49 {
   z-index: 1;
   position: fixed;
+  font-size: 150%;
   font-family: "JetBrains Mono", monospace;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
+  padding: 0.5em 1em;
   outline: none;
+  border: double;
+  border-radius: 10px;
+  border-color: black;
   background-color: hsl(0, 0%, 0%);
-  border: solid 2px black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  display: block;
+
+  right: 10px;
+  bottom: 10px;
   will-change: transform;
-
-  /* Forme carrée avec bords arrondis */
-  width: 5vw;
-  height: 5vw;
-  min-width: 50px;
-  min-height: 50px;
-  border-radius: 15%;
-
-  /* Style du texte */
-  font-size: 1.2vw;
-  padding: 0;
-}
-
-/* Positionnement spécifique */
-.button-49 {
-  right: 2vw;
-  bottom: 2vw;
   transition: transform 450ms;
 }
 
-.button-home {
-  left: 2vw;
-  top: 2vw;
-  transition: transform 450ms;
-}
-
-/* Effet original du bouton 49 */
-.button-49::before {
+button::before {
   content: "";
   z-index: -1;
   position: absolute;
-  border-radius: 15%;
+  border-radius: 10px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+
   background-color: #ffffff;
   transform-origin: center top;
   transform: scaleY(0);
+
   transition: transform 0.25s ease-in-out;
 }
 
@@ -95,6 +74,7 @@ body {
   cursor: pointer;
   color: black;
   transition: transform 125ms;
+
   transform: translateY(-7px);
 }
 
@@ -103,46 +83,59 @@ body {
   transform: scaleY(1);
 }
 
-/* Effet original du bouton home */
+.button-home {
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+  border-radius: 10px;
+  position: fixed;
+  font-size: 150%;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+
+  color: rgb(255, 255, 255);
+  padding: 0.5em 1em;
+  outline: none;
+
+  background-color: hsl(0, 0%, 0%);
+  border: solid;
+
+  border-color: black;
+  display: block;
+
+  will-change: transform;
+  transition: transform 450ms;
+}
+
 .button-home::before {
   content: "";
   z-index: -1;
   position: absolute;
-  border-radius: 15%;
+  border-radius: 10px;
+
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+
   background-color: #ffffff;
   transform-origin: right;
   transform: scaleX(0);
+
   transition: transform 0.25s ease-in-out;
 }
 
 .button-home:hover {
   cursor: pointer;
   color: black;
+  border-radius: 10px;
   opacity: 0.7;
   transition: transform 125ms;
+
   transform: translateX(-7px);
 }
 
 .button-home:hover::before {
   transform-origin: right left;
-  transform: scaleX(1);
-}
-
-/* Adaptations pour petits écrans */
-@media (max-width: 768px) {
-  .button-49,
-  .button-home {
-    width: 50px;
-    height: 50px;
-    font-size: 12px;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 15px;
-  }
+  transform: scaleY(1);
 }
