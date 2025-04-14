@@ -1,0 +1,40 @@
+/* Barre de navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  background-color: transparent; /* Aucun fond */
+}
+
+/* Liste horizontale */
+.nav-list {
+  display: flex;
+  gap: 2rem; /* Espacement entre les liens */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style des liens */
+.nav-list a {
+  text-decoration: none;
+  color: #333; /* Couleur texte sombre */
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  padding: 0.2rem 0;
+}
+
+/* Effet hover minimal */
+.nav-list a:hover {
+  color: #000; /* Noir au survol */
+}
+
+/* Lien actif */
+.nav-list .active {
+  border-bottom: 1px solid #000; /* Ligne fine sous le lien actif */
+}
