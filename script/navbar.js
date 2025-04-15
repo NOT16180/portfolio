@@ -1,7 +1,6 @@
-// Charge la navbar et met en surbrillance la page active
 document.addEventListener("DOMContentLoaded", function () {
   // Solution 1 : Fetch (fonctionne sur GitHub Pages)
-  fetch("/navbar.html")
+  fetch("navbar.html")
     .then((response) => response.text())
     .then((html) => {
       document.getElementById("navbar-container").innerHTML = html;
