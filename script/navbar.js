@@ -1,5 +1,4 @@
 // Charge la navbar et met en surbrillance la page active
-// Charge la navbar et met en surbrillance la page active
 document.addEventListener("DOMContentLoaded", function () {
   // Solution 1 : Fetch (fonctionne sur GitHub Pages)
   fetch("/navbar.html")
