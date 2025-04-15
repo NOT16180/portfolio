@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Solution 1 : Fetch (fonctionne sur GitHub Pages)
-  fetch("navbar.html")
+  fetch("partials/navbar.html")
     .then((response) => response.text())
     .then((html) => {
       document.getElementById("navbar-container").innerHTML = html;
