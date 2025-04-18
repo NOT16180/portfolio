@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("navbar-container").innerHTML = `
       <nav class="navbar">
         <ul class="nav-list">
-          <li><a href="index.html">menu</a></li>
+          <li><a href="index.html">NOT</a></li>
+
+          <li><a href="index.html">home</a></li>
           <li><a href="selection.html">selection</a></li>
-          <li><a href="purchase.html">purchase</a></li>
+          <li><a href="https://www.inprnt.com/gallery/not/">purchase</a></li>
           <li><a href="contact.html">contact</a></li>
         </ul>
       </nav>
