@@ -86,15 +86,15 @@
 @media (min-width: 1600px) {
   :root {
     --max-content-width: 1400px;
-    --nav-gap: 2.5rem;
+    --nav-gap: 1rem;
   }
 }
 
 /* Tablettes (mode paysage) */
 @media (max-width: 1024px) {
   :root {
-    --nav-gap: 1.5rem;
-    --nav-font-size: 0.9rem;
+    --nav-gap: 0.7rem;
+    --nav-font-size: 0.4rem;
     --nav-padding: 0.8rem 1.5rem;
     --max-content-width: 900px;
   }
@@ -103,9 +103,9 @@
 /* Tablettes (mode portrait) */
 @media (max-width: 768px) {
   :root {
-    --nav-gap: 1.2rem;
-    --nav-font-size: 0.85rem;
-    --nav-padding: 0.7rem 1.2rem;
+    --nav-gap: 0.5rem;
+    --nav-font-size: 0.35rem;
+    --nav-padding: 0.5rem 1.2rem;
     --max-content-width: 700px;
   }
 
@@ -121,8 +121,8 @@
 /* Smartphones (grands) */
 @media (max-width: 600px) {
   :root {
-    --nav-gap: 1rem;
-    --nav-font-size: 0.8rem;
+    --nav-gap: 0.3rem;
+    --nav-font-size: 0.3rem;
     --nav-padding: 0.5rem;
     --max-content-width: 100%;
   }
@@ -141,8 +141,8 @@
 /* Smartphones (petits) */
 @media (max-width: 480px) {
   :root {
-    --nav-gap: 0.6rem;
-    --nav-font-size: 0.75rem;
+    --nav-gap: 0.2rem;
+    --nav-font-size: 0.25rem;
   }
 
   .nav-list {
@@ -167,7 +167,7 @@
 /* Très petits écrans (mode portrait) */
 @media (max-width: 360px) {
   :root {
-    --nav-font-size: 0.7rem;
+    --nav-font-size: 0.2rem;
   }
 
   .nav-list {
