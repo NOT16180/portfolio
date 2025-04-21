@@ -1,54 +1,176 @@
-/* Barre de navigation */
+/* Barre de navigation parfaitement centrée et responsive */
+:root {
+  --nav-bg-color: transparent;
+  --nav-text-color: #333;
+  --nav-hover-color: #000;
+  --nav-active-border: 1px solid #000;
+  --nav-padding: 1rem 2rem;
+  --nav-gap: 2rem;
+  --nav-font-size: 1rem;
+  --nav-transition: all 0.3s ease;
+  --max-content-width: 1200px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: var(--nav-padding);
   z-index: 1000;
-  background-color: transparent; /* Aucun fond */
+  background-color: var(--nav-bg-color);
+  transition: var(--nav-transition);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
 }
 
-/* Liste horizontale */
+.navbar-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  display: flex;
+  justify-content: center;
+}
+
 .nav-list {
   display: flex;
-  gap: 2rem; /* Espacement entre les liens */
+  gap: var(--nav-gap);
   list-style: none;
-  margin: 0;
+  margin: 0 auto; /* Centrage amélioré */
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center; /* Double assurance du centrage */
 }
 
-/* Style des liens */
 .nav-list a {
   text-decoration: none;
-  color: #333; /* Couleur texte sombre */
-  font-size: 1rem;
+  color: var(--nav-text-color);
+  font-size: var(--nav-font-size);
   font-weight: 400;
   letter-spacing: 0.5px;
-  transition: color 0.2s;
-  padding: 0.2rem 0;
+  transition: var(--nav-transition);
+  padding: 0.5rem 1rem; /* Padding horizontal ajouté */
+  position: relative;
+  white-space: nowrap; /* Empêche le retour à la ligne */
 }
 
-/* Effet hover minimal */
+/* États interactifs */
 .nav-list a:hover {
-  color: #000; /* Noir au survol */
+  color: var(--nav-hover-color);
 }
 
-/* Lien actif */
 .nav-list .active {
-  border-bottom: 1px solid #000; /* Ligne fine sous le lien actif */
+  border-bottom: var(--nav-active-border);
 }
 
-@media (max-width: 600px) {
-  .nav-list {
-    gap: 1rem;
+/* Animation de soulignement centrée */
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--nav-hover-color);
+  transition: var(--nav-transition);
+}
+
+.nav-list a:hover::after {
+  width: calc(100% - 2rem); /* Prend en compte le padding */
+}
+
+/* ===== Responsive ===== */
+
+/* Grands écrans (ajustement progressif) */
+@media (min-width: 1600px) {
+  :root {
+    --max-content-width: 1400px;
+    --nav-gap: 2.5rem;
+  }
+}
+
+/* Tablettes (mode paysage) */
+@media (max-width: 1024px) {
+  :root {
+    --nav-gap: 1.5rem;
+    --nav-font-size: 0.9rem;
+    --nav-padding: 0.8rem 1.5rem;
+    --max-content-width: 900px;
+  }
+}
+
+/* Tablettes (mode portrait) */
+@media (max-width: 768px) {
+  :root {
+    --nav-gap: 1.2rem;
+    --nav-font-size: 0.85rem;
+    --nav-padding: 0.7rem 1.2rem;
+    --max-content-width: 700px;
+  }
+
+  .navbar {
+    backdrop-filter: blur(2px); /* Réduction du flou */
   }
 
   .nav-list a {
-    font-size: 0.7rem;
-    letter-spacing: 0.3px;
+    padding: 0.5rem 0.8rem;
   }
-  .navbar {
-    padding: 0.5rem 1rem; /* Réduit le padding de la navbar */
+}
+
+/* Smartphones (grands) */
+@media (max-width: 600px) {
+  :root {
+    --nav-gap: 1rem;
+    --nav-font-size: 0.8rem;
+    --nav-padding: 0.5rem;
+    --max-content-width: 100%;
+  }
+
+  .nav-list {
+    gap: 0.8rem;
+    justify-content: space-evenly; /* Répartition égale */
+    width: 100%;
+  }
+
+  .nav-list a {
+    padding: 0.5rem;
+  }
+}
+
+/* Smartphones (petits) */
+@media (max-width: 480px) {
+  :root {
+    --nav-gap: 0.6rem;
+    --nav-font-size: 0.75rem;
+  }
+
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    justify-items: center; /* Centrage des items */
+  }
+
+  .nav-list a {
+    width: 100%;
+    text-align: center;
+    padding: 0.3rem 0;
+  }
+
+  .nav-list a::after {
+    display: none; /* Désactive l'animation sur très petits écrans */
+  }
+}
+
+/* Très petits écrans (mode portrait) */
+@media (max-width: 360px) {
+  :root {
+    --nav-font-size: 0.7rem;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   }
 }
