@@ -38,3 +38,17 @@
 .nav-list .active {
   border-bottom: 1px solid #000; /* Ligne fine sous le lien actif */
 }
+
+@media (max-width: 600px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-list a {
+    font-size: 0.7rem;
+    letter-spacing: 0.3px;
+  }
+  .navbar {
+    padding: 0.5rem 1rem; /* Réduit le padding de la navbar */
+  }
+}

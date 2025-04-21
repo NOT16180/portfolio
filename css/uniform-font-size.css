@@ -1,0 +1,56 @@
+/* uniform-font-size.css */
+:root {
+  --base-font-size: 16px;
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: calc(var(--base-font-size) * 1.5);
+}
+
+p,
+a,
+li,
+span,
+label,
+input,
+textarea,
+select,
+button {
+  font-size: var(--base-font-size);
+}
+
+.nav-list a {
+  font-size: calc(var(--base-font-size) * 0.9);
+}
+
+.button-49,
+.button-home {
+  font-size: calc(var(--base-font-size) * 1.5);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --base-font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --base-font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --base-font-size: 13px;
+  }
+}

@@ -3,6 +3,8 @@ body {
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
   background-color: white;
+  padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
+
   color: #282828;
 }
 

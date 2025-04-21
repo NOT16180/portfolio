@@ -21,6 +21,8 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   margin: 0;
+  padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
+
   color: var(--primary-color);
 }
 
@@ -32,24 +34,6 @@ body {
   align-items: center; /* centre verticalement */
   border-radius: 0;
 }
-/* Barre de navigation */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  background-color: transparent; /* Aucun fond */
-}
-
-/* Navigation */
-nav {
-  margin: 15px 0;
-  padding: 15px 0;
-  width: 100%;
-}
-
 /* Social Links - Taille réduite par défaut */
 .social-links {
   position: fixed;
