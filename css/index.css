@@ -67,6 +67,30 @@ body {
   transform: scale(1.1);
 }
 
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  border-radius: 0px;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
 /* Responsive Breakpoints */
 @media (min-width: 481px) {
   .box {

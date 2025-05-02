@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("navbar-container").innerHTML = `
       <nav class="navbar">
         <ul class="nav-list">
-          <li><a href="index.html">NOT</a></li>
 
           <li><a href="index.html">home</a></li>
           <li><a href="selection.html">selection</a></li>
