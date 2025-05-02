@@ -51,8 +51,8 @@ footer,
 
 /* --- Hover --- */
 .box:hover {
-  transform: scale(1.05);
-  z-index: 2;
+  transform: scale(1.02);
+  z-index: 3;
 }
 
 /* --- Responsive mobile --- */

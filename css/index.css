@@ -86,8 +86,11 @@ button {
   border: none;
   font-size: 16px;
 }
-
 button:hover {
+  background-color: white;
+  color: black;
+}
+button:active {
   background-color: white;
   color: black;
 }

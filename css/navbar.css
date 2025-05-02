@@ -1,4 +1,3 @@
-/* Barre de navigation parfaitement centrée et responsive */
 :root {
   --nav-bg-color: transparent;
   --nav-text-color: #333;
@@ -36,10 +35,10 @@
   display: flex;
   gap: var(--nav-gap);
   list-style: none;
-  margin: 0 auto; /* Centrage amélioré */
   padding: 0;
-  flex-wrap: wrap;
-  justify-content: center; /* Double assurance du centrage */
+  margin: 0; /* Reset des marges */
+  justify-content: center; /* Centrage principal */
+  align-items: center; /* Centrage vertical */
 }
 
 .nav-list a {
@@ -49,9 +48,9 @@
   font-weight: 400;
   letter-spacing: 0.5px;
   transition: var(--nav-transition);
-  padding: 0.5rem 1rem; /* Padding horizontal ajouté */
+  padding: 0.5rem 1rem;
   position: relative;
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  white-space: nowrap;
 }
 
 /* États interactifs */
@@ -77,100 +76,46 @@
 }
 
 .nav-list a:hover::after {
-  width: calc(100% - 2rem); /* Prend en compte le padding */
+  width: calc(100% - 2rem);
 }
 
 /* ===== Responsive ===== */
-
-/* Grands écrans (ajustement progressif) */
-@media (min-width: 1600px) {
-  :root {
-    --max-content-width: 1400px;
-    --nav-gap: 1rem;
-  }
-}
-
-/* Tablettes (mode paysage) */
 @media (max-width: 1024px) {
   :root {
-    --nav-gap: 0.7rem;
-    --nav-font-size: 0.4rem;
-    --nav-padding: 0.8rem 1.5rem;
-    --max-content-width: 900px;
+    --nav-gap: 1.5rem;
+    --nav-font-size: 0.9rem;
   }
 }
 
-/* Tablettes (mode portrait) */
 @media (max-width: 768px) {
   :root {
-    --nav-gap: 0.5rem;
-    --nav-font-size: 0.35rem;
-    --nav-padding: 0.5rem 1.2rem;
-    --max-content-width: 700px;
-  }
-
-  .navbar {
-    backdrop-filter: blur(2px); /* Réduction du flou */
-  }
-
-  .nav-list a {
-    padding: 0.5rem 0.8rem;
+    --nav-gap: 1rem;
+    --nav-font-size: 0.8rem;
+    --nav-padding: 0.8rem 1rem;
   }
 }
 
-/* Smartphones (grands) */
 @media (max-width: 600px) {
-  :root {
-    --nav-gap: 0.3rem;
-    --nav-font-size: 0.3rem;
-    --nav-padding: 0.5rem;
-    --max-content-width: 100%;
-  }
-
   .nav-list {
+    flex-wrap: wrap;
     gap: 0.8rem;
-    justify-content: space-evenly; /* Répartition égale */
-    width: 100%;
-  }
-
-  .nav-list a {
-    padding: 0.5rem;
   }
 }
 
-/* Smartphones (petits) */
 @media (max-width: 480px) {
   :root {
-    --nav-gap: 0.2rem;
-    --nav-font-size: 0.25rem;
+    --nav-font-size: 0.7rem;
+    --nav-gap: 0.5rem;
   }
 
   .nav-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 0.5rem;
-    padding: 0 0.5rem;
-    justify-items: center; /* Centrage des items */
+    grid-template-columns: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-list a {
-    width: 100%;
-    text-align: center;
-    padding: 0.3rem 0;
-  }
-
-  .nav-list a::after {
-    display: none; /* Désactive l'animation sur très petits écrans */
-  }
-}
-
-/* Très petits écrans (mode portrait) */
-@media (max-width: 360px) {
-  :root {
-    --nav-font-size: 0.2rem;
-  }
-
-  .nav-list {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    padding: 0.3rem 0.5rem;
   }
 }
