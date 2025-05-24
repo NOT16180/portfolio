@@ -1,3 +1,4 @@
+/* ===== CSS VARIABLES ===== */
 :root {
   --nav-bg-color: transparent;
   --nav-text-color: #333;
@@ -10,10 +11,12 @@
   --max-content-width: 1200px;
 }
 
+/* ===== BASE NAVBAR STYLES ===== */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   padding: var(--nav-padding);
   z-index: 1000;
@@ -22,6 +25,7 @@
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .navbar-container {
@@ -29,18 +33,21 @@
   max-width: var(--max-content-width);
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
+/* ===== NAVIGATION LIST ===== */
 .nav-list {
   display: flex;
   gap: var(--nav-gap);
   list-style: none;
   padding: 0;
-  margin: 0; /* Reset des marges */
-  justify-content: center; /* Centrage principal */
-  align-items: center; /* Centrage vertical */
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ===== NAVIGATION LINKS ===== */
 .nav-list a {
   text-decoration: none;
   color: var(--nav-text-color);
@@ -53,7 +60,7 @@
   white-space: nowrap;
 }
 
-/* États interactifs */
+/* ===== INTERACTIVE STATES ===== */
 .nav-list a:hover {
   color: var(--nav-hover-color);
 }
@@ -62,7 +69,7 @@
   border-bottom: var(--nav-active-border);
 }
 
-/* Animation de soulignement centrée */
+/* ===== HOVER ANIMATION ===== */
 .nav-list a::after {
   content: "";
   position: absolute;
@@ -79,7 +86,9 @@
   width: calc(100% - 2rem);
 }
 
-/* ===== Responsive ===== */
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large tablets and small desktops */
 @media (max-width: 1024px) {
   :root {
     --nav-gap: 1.5rem;
@@ -87,6 +96,7 @@
   }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
   :root {
     --nav-gap: 1rem;
@@ -95,6 +105,7 @@
   }
 }
 
+/* Small tablets */
 @media (max-width: 600px) {
   .nav-list {
     flex-wrap: wrap;
@@ -102,6 +113,7 @@
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
   :root {
     --nav-font-size: 0.7rem;
@@ -109,7 +121,6 @@
   }
 
   .nav-list {
-    grid-template-columns: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
