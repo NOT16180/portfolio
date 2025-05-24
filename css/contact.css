@@ -13,9 +13,10 @@
 }
 
 body {
+  background: url(../images/IMG_1443.JPG) no-repeat center/cover fixed;
+
   font-family: "Silkscreen", sans-serif;
 
-  background: var(--primary-bg);
   color: var(--text-color);
   display: flex;
   justify-content: center;
