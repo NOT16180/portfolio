@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: "silkscreen", sans-serif;
-  padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
+  font-family: "silkscreen", monospace;
   background-color: #ffffff;
   color: #ffffff;
   display: flex;
