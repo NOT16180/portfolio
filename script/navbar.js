@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="index.html">home</a></li>
           <li><a href="selection.html">selection</a></li>
           
-          <li><a href="https://www.inprnt.com/gallery/not/">purchase</a></li>
+          <li><a href="purchase.html">purchase</a></li>
           <li><a href="linktree.html">links</a></li>
 
           <li><a href="contact.html">contact</a></li>
