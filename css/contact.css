@@ -13,7 +13,8 @@
 }
 
 body {
-  font-family: "JetBrains Mono", monospace, sans-serif;
+  font-family: "Silkscreen", sans-serif;
+
   background: var(--primary-bg);
   color: var(--text-color);
   display: flex;

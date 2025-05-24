@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   background-color: white;
   color: #282828;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "silkscreen", sans-serif;
 }
 
 /* Texte centré */

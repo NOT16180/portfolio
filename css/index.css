@@ -13,7 +13,7 @@
 body {
   background: url(../images/IMG_1741.JPG) no-repeat center/cover fixed;
   background-color: var(--secondary-color);
-  font-family: "JetBrains Mono", monospace;
+  font-family: "silkscreen", sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@ button {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
-  border-radius: 0px;
+  border-radius: 4px;
   padding: 12px 24px;
   border: none;
   font-size: 16px;
