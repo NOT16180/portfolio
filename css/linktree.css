@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: "Silkscreen", sans-serif;
-
+  padding-top: 80px; /* Adjust according to your navbar height */
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;

@@ -5,6 +5,7 @@ body {
   background-color: white;
   color: #282828;
   font-family: "silkscreen", sans-serif;
+  padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
 }
 
 /* Texte centré */
