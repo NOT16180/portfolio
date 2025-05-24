@@ -1,7 +1,7 @@
 body {
   text-align: center;
   box-sizing: border-box;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "silkscreen", sans-serif;
   background-color: white;
   padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
   color: #282828;

@@ -37,7 +37,6 @@ body {
 
 h2 {
   margin-bottom: 1.5rem;
-  font-size: clamp(1.5rem, 5vw, 2rem);
   text-align: center;
 }
 
@@ -47,18 +46,12 @@ form {
   gap: 1rem;
 }
 
-label {
-  font-weight: bold;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-}
-
 input,
 textarea,
 select {
   width: 100%;
   margin-top: 0.5rem;
   padding: var(--input-padding);
-  font-size: clamp(0.9rem, 3vw, 1rem);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-sizing: border-box;
@@ -76,7 +69,6 @@ button {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -91,7 +83,6 @@ button:hover {
   font-style: italic;
   color: #666;
   text-align: center;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
 }
 
 #form-message {
@@ -100,7 +91,6 @@ button:hover {
   border-radius: 8px;
   display: none;
   text-align: center;
-  font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 #form-message.success {
