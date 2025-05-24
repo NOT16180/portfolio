@@ -7,7 +7,8 @@
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "JetBrains Mono", monospace;
+
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
