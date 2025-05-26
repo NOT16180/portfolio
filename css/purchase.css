@@ -1,63 +1,123 @@
+/* CSS Custom Properties for better maintainability */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #ffffff;
+  --card-bg: #1f1f1f;
+  --card-radius: 8px;
+  --card-hover-scale: 1.03;
+  --gap-mobile: 1.5rem;
+  --gap-desktop: 2rem;
+  --card-width: 300px;
+  --font-main: "silkscreen", monospace;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: url(../images/IMG_1501.JPG) no-repeat center/cover fixed;
-
+  background-color: var(--bg-color);
   margin: 0;
-  font-family: "silkscreen", monospace;
-  background-color: #ffffff;
-  color: #ffffff;
+  padding: clamp(1rem, 4vw, 2rem);
+  font-family: var(--font-main);
+  color: var(--text-color);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
 }
 
 .wrapper {
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: var(--gap-desktop);
+  font-weight: normal;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--gap-mobile);
+  align-items: center;
 }
 
 .card {
-  background-color: #1f1f1f;
-  border-radius: 8px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
   overflow: hidden;
   text-decoration: none;
-  color: white;
-  transition: transform 0.2s ease;
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  max-width: 100%;
+  width: 100%;
 }
 
-.card:hover {
-  transform: scale(1.03);
+.card:hover,
+.card:focus-visible {
+  transform: scale(var(--card-hover-scale));
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
 }
 
 .card img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+  aspect-ratio: 16/9; /* Consistent image ratios */
 }
 
 .card h2 {
   margin: 1rem;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: normal;
 }
 
+/* Desktop styles */
 @media (min-width: 600px) {
   .links {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap-desktop);
   }
 
   .card {
-    width: 300px;
+    width: var(--card-width);
+    flex-shrink: 0;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1000px) {
+  .links {
+    gap: 2.5rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid var(--text-color);
   }
 }
