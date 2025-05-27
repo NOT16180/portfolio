@@ -1,40 +1,38 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  --nav-bg: transparent;
-  --nav-text: #333;
-  --nav-hover: #000;
-  --nav-border: #000;
+  --nav-bg-color: transparent;
+  --nav-text-color: #333;
+  --nav-hover-color: #000;
+  --nav-active-border: 1px solid #000;
   --nav-padding: 1rem 2rem;
   --nav-gap: 2rem;
-  --nav-font: 1rem;
-  --nav-transition: color 0.3s ease, border-color 0.3s ease;
-  --nav-underline-transition: width 0.3s ease;
-  --max-width: 1200px;
-  --nav-blur: blur(5px);
-  --nav-z: 1000;
+  --nav-font-size: 1rem;
+  --nav-transition: all 0.3s ease;
+  --max-content-width: 1200px;
 }
-
-/* ===== NAVBAR STRUCTURE ===== */
+/* ===== BASE NAVBAR STYLES ===== */
 .navbar {
   position: fixed;
-  inset: 0 0 auto 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   padding: var(--nav-padding);
-  z-index: var(--nav-z);
-  background: var(--nav-bg);
-  backdrop-filter: var(--nav-blur);
+  z-index: 1000;
+  background-color: var(--nav-bg-color);
+  transition: var(--nav-transition);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
-  will-change: background-color;
 }
-
 .navbar-container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--max-content-width);
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
-
 /* ===== NAVIGATION LIST ===== */
 .nav-list {
   display: flex;
@@ -42,80 +40,77 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
   align-items: center;
 }
-
 /* ===== NAVIGATION LINKS ===== */
 .nav-list a {
-  color: var(--nav-text);
-  font-size: var(--nav-font);
-  font-weight: 400;
-  letter-spacing: 0.025em;
   text-decoration: none;
+  color: var(--nav-text-color);
+  font-size: var(--nav-font-size);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: var(--nav-transition);
   padding: 0.5rem 1rem;
   position: relative;
   white-space: nowrap;
-  transition: var(--nav-transition);
 }
-
 /* ===== INTERACTIVE STATES ===== */
-.nav-list a:hover,
-.nav-list a:focus-visible {
-  color: var(--nav-hover);
-  outline: none;
+.nav-list a:hover {
+  color: var(--nav-hover-color);
 }
-
 .nav-list .active {
-  border-bottom: 1px solid var(--nav-border);
+  border-bottom: var(--nav-active-border);
 }
-
 /* ===== HOVER ANIMATION ===== */
 .nav-list a::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--nav-hover);
+  bottom: 0;
+  left: 50%;
   transform: translateX(-50%);
-  transition: var(--nav-underline-transition);
+  background-color: var(--nav-hover-color);
+  transition: var(--nav-transition);
 }
-
-.nav-list a:hover::after,
-.nav-list a:focus-visible::after {
+.nav-list a:hover::after {
   width: calc(100% - 2rem);
 }
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* ===== RESPONSIVE DESIGN ===== */
+/* Large tablets and small desktops */
 @media (max-width: 1024px) {
   :root {
     --nav-gap: 1.5rem;
-    --nav-font: 0.9rem;
+    --nav-font-size: 0.9rem;
   }
 }
-
+/* Tablets */
 @media (max-width: 768px) {
   :root {
     --nav-gap: 1rem;
-    --nav-font: 0.8rem;
+    --nav-font-size: 0.8rem;
     --nav-padding: 0.8rem 1rem;
   }
 }
-
+/* Small tablets */
 @media (max-width: 600px) {
   .nav-list {
     flex-wrap: wrap;
     gap: 0.8rem;
   }
 }
-
+/* Mobile phones */
 @media (max-width: 480px) {
   :root {
-    --nav-font: 0.7rem;
+    --nav-font-size: 0.7rem;
     --nav-gap: 0.5rem;
   }
-
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .nav-list a {
     padding: 0.3rem 0.5rem;
   }
