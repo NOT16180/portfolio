@@ -3,7 +3,7 @@
   --primary-bg: #f8f8f8;
   --text-color: #222;
   --container-bg: white;
-  --border-color: #ccc;
+  --border-color: #333;
   --button-bg: #333;
   --button-hover: #555;
   --success-bg: #e6ffed;
@@ -30,6 +30,7 @@ body {
   background: var(--container-bg);
   padding: var(--container-padding);
   border-radius: 12px;
+  border: 1px solid var(--border-color);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;

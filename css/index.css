@@ -18,6 +18,18 @@
   --font-size: clamp(12px, 2vw, 18px);
 }
 
+p {
+  -webkit-text-stroke: 1px lightgrey;
+  color: black;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  -webkit-text-stroke: 1px lightgrey;
+  color: black;
+}
+
 /* --- Reset et base optimisés --- */
 *,
 *::before,

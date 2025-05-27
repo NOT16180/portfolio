@@ -1,8 +1,8 @@
 /* CSS Custom Properties for better maintainability */
 :root {
   --bg-color: #ffffff;
-  --text-color: #ffffff;
-  --card-bg: #1f1f1f;
+  --text-color: #222;
+  --card-bg: #ffffff;
   --card-radius: 8px;
   --card-hover-scale: 1.03;
   --gap-mobile: 1.5rem;
@@ -58,13 +58,15 @@ h1 {
   will-change: transform;
   max-width: 100%;
   width: 100%;
+  border: 1px solid #222;
 }
 
 .card:hover,
 .card:focus-visible {
   transform: scale(var(--card-hover-scale));
-  outline: 2px solid rgba(255, 255, 255, 0.3);
   outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .card img {
