@@ -26,13 +26,33 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  /* Ajouté pour centrer horizontalement */
   align-items: center;
+  /* Ajouté pour centrer verticalement */
 }
 
 .wrapper {
   text-align: center;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  /* Ajouté pour centrer la wrapper si trop grande */
+  display: flex;
+  /* Ajouté pour centrer verticalement le contenu interne */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  /* Pour forcer un peu de hauteur si besoin */
+}
+
+footer {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+  font-family: var(--font-main, "silkscreen", monospace);
+  color: var(--text-color, #222);
 }
 
 h1 {
@@ -46,6 +66,8 @@ h1 {
   flex-direction: column;
   gap: var(--gap-mobile);
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .card {
@@ -57,8 +79,11 @@ h1 {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
   max-width: 100%;
-  width: 100%;
   border: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card:hover,
@@ -74,13 +99,21 @@ h1 {
   height: auto;
   display: block;
   object-fit: cover;
-  aspect-ratio: 16/9; /* Consistent image ratios */
+  aspect-ratio: 16/9;
+  /* Consistent image ratios */
 }
 
 .card h2 {
   margin: 1rem;
   font-size: clamp(1.1rem, 3vw, 1.4rem);
   font-weight: normal;
+}
+
+/* Mobile only : largeur 100% */
+@media (max-width: 599px) {
+  .card {
+    width: 100%;
+  }
 }
 
 /* Desktop styles */
@@ -90,6 +123,7 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--gap-desktop);
+    width: 100%;
   }
 
   .card {

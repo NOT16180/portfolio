@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Contact</title>
+    <title>Contact - Portfolio NOT</title>
+    <meta
+      name="description"
+      content="Contactez NOT via ce formulaire ou par mail. Réponse rapide garantie !"
+    />
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/uniform-font-size.css" />
@@ -15,35 +18,39 @@
   </head>
   <body>
     <div id="navbar-container"></div>
-
     <div class="contact-container">
       <h2>Contact</h2>
-      <form id="contact-form" method="POST">
-        <label>
-          Your name:
-          <input type="text" name="name" required />
+      <form id="contact-form" method="POST" novalidate>
+        <label for="name"
+          >Your name:
+          <input type="text" name="name" id="name" required />
         </label>
-        <label>
-          Your email:
-          <input type="email" name="email" required />
+        <label for="email"
+          >Your email:
+          <input type="email" name="email" id="email" required />
         </label>
-        <label>
-          The subject:
-          <input type="text" name="subject" required />
+        <label for="subject"
+          >The subject:
+          <input type="text" name="subject" id="subject" required />
         </label>
-        <label>
-          Your message:
-          <textarea name="message" required></textarea>
+        <label for="message"
+          >Your message:
+          <textarea name="message" id="message" required></textarea>
         </label>
         <button type="submit">Send</button>
       </form>
-      <div id="form-message"></div>
+      <div id="form-message" aria-live="polite"></div>
       <div class="email-display">
         or write to me at : <strong>ask.not.ink@gmail.com</strong>
       </div>
+      <noscript>
+        <div class="email-display">
+          JavaScript is disabled. Please write to me at
+          <strong>ask.not.ink@gmail.com</strong>
+        </div>
+      </noscript>
     </div>
     <script src="script/navbar.js" defer></script>
-
     <script src="script/contact.js"></script>
   </body>
 </html>

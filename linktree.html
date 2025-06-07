@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOT Links</title>
+    <title>Liens - Portfolio NOT</title>
+    <meta
+      name="description"
+      content="Tous les réseaux et liens officiels de NOT, artiste et créateur digital."
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
@@ -16,60 +20,75 @@
       href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/linktree.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/uniform-font-size.css" />
-
-    <div id="navbar-container"></div>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K0E61Y1VXS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-K0E61Y1VXS");
+    </script>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-K0E61Y1VXS"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-K0E61Y1VXS");
-  </script>
   <body>
+    <div id="navbar-container"></div>
     <div class="container">
       <h1>NoT</h1>
-
       <p class="intro">a lil' sip of my art</p>
-      <a href="index.html" class="link" target="_blank">
+      <a href="index.html" class="link" target="_blank" rel="noopener">
         <i class="fas fa-store"></i> Website
       </a>
-      <a href="https://notverse.printify.me/" class="link" target="_blank">
+      <a
+        href="https://notverse.printify.me/"
+        class="link"
+        target="_blank"
+        rel="noopener"
+      >
         <i class="fas fa-store"></i> Redbubble
       </a>
-      <a href="https://ko-fi.com/not1618033" class="link" target="_blank">
+      <a
+        href="https://ko-fi.com/not1618033"
+        class="link"
+        target="_blank"
+        rel="noopener"
+      >
         <i class="fas fa-coffee"></i> Ko-fi
       </a>
       <a
         href="https://www.instagram.com/not1.6180/"
         class="link"
         target="_blank"
+        rel="noopener"
       >
         <i class="fab fa-instagram"></i> Instagram
       </a>
-      <a href="https://twitter.com/not16180339887" class="link" target="_blank">
+      <a
+        href="https://twitter.com/not16180339887"
+        class="link"
+        target="_blank"
+        rel="noopener"
+      >
         <i class="fab fa-twitter"></i> Twitter
       </a>
       <a
         href="https://www.inprnt.com/gallery/not/"
         class="link"
         target="_blank"
+        rel="noopener"
       >
         <i class="fas fa-paint-brush"></i> Inprnt
       </a>
     </div>
+    <footer>
+      <p>©2019 NoT. All Rights Reserved.</p>
+    </footer>
     <script src="script/navbar.js" defer></script>
   </body>
-  <footer><p>©2019 NoT. All Rights Reserved.</p></footer>
 </html>
