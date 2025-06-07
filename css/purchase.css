@@ -24,11 +24,6 @@ body {
   font-family: var(--font-main);
   color: var(--text-color);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  /* Ajouté pour centrer horizontalement */
-  align-items: center;
-  /* Ajouté pour centrer verticalement */
 }
 
 .wrapper {
