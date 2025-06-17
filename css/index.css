@@ -19,14 +19,12 @@
 }
 
 p {
-  -webkit-text-stroke: 1px lightgrey;
   color: black;
 }
 
 h1 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  -webkit-text-stroke: 1px lightgrey;
   color: black;
 }
 
@@ -186,6 +184,7 @@ button:active {
 
 /* --- Accessibilité --- */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

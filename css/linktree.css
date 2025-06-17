@@ -9,7 +9,8 @@ body {
   background: url(../images/IMG_1528.JPG) no-repeat center/cover fixed;
   margin: 0;
   font-family: "Silkscreen", sans-serif;
-  padding-top: 80px; /* Adjust according to your navbar height */
+  padding-top: 80px;
+  /* Adjust according to your navbar height */
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
@@ -23,15 +24,14 @@ body {
   width: 100%;
   text-align: center;
 }
+
 p {
-  -webkit-text-stroke: 1px lightgrey;
   color: black;
 }
 
 h1 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  -webkit-text-stroke: 1px lightgrey;
   color: black;
 }
 
@@ -63,6 +63,7 @@ h1 {
   h1 {
     font-size: 1.5rem;
   }
+
   .link {
     font-size: 1rem;
   }
