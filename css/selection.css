@@ -1,191 +1,190 @@
 /* --- Variables CSS --- */
 :root {
-  --bg-color: white;
-  --text-color: #282828;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
-  --border-radius: 12px;
-  --transition-speed: 0.3s;
-  --navbar-height: 80px;
+	--bg-color: white;
+	--text-color: #282828;
+	--shadow-light: rgba(0, 0, 0, 0.1);
+	--shadow-hover: rgba(0, 0, 0, 0.15);
+	--border-radius: 12px;
+	--transition-speed: 0.3s;
+}
+
+.intro {
+	padding-top: var(--navbar-height, 100px);
+
 }
 
 p {
-  color: black;
-}
-
-h1 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: black;
+	color: black;
 }
 
 /* --- Reset et base --- */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html,
 body {
-  background: url(../images/IMG_1434.JPG) no-repeat center/cover fixed;
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Silkscreen", sans-serif;
-  margin: 0;
-  padding: 0;
-  padding-top: var(--navbar-height);
+	background: url(../images/IMG_1434.JPG) no-repeat center/cover fixed;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: "Silkscreen", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 /* --- Texte centré --- */
 .intro,
 footer,
 .block {
-  text-align: center;
+	text-align: center;
 }
 
 /* --- Conteneur centré optimisé --- */
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 2rem;
-  min-height: calc(100vh - var(--navbar-height));
-  width: min(90%, 800px);
-  margin: 2rem auto;
-  padding: 1rem;
+	padding-top: var(--navbar-height, 40px);
+	/* espace pour navbar */
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2rem;
+	width: min(90%, 800px);
+	margin: 2rem auto;
+	min-height: calc(100vh - var(--navbar-height));
 }
+
 
 /* --- Boîtes optimisées --- */
 .box {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 4px 20px var(--shadow-light),
-    0 1px 3px rgba(0, 0, 0, 0.05);
-  transition:
-    transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow var(--transition-speed) ease,
-    backdrop-filter var(--transition-speed) ease;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  position: relative;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow:
+		0 4px 20px var(--shadow-light),
+		0 1px 3px rgba(0, 0, 0, 0.05);
+	transition:
+		transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow var(--transition-speed) ease,
+		backdrop-filter var(--transition-speed) ease;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	position: relative;
 }
 
 /* --- Images optimisées --- */
 .box img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  /* Réduit de 400px à 250px */
-  object-fit: cover;
-  transition: transform var(--transition-speed) ease;
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 250px;
+	/* Réduit de 400px à 250px */
+	object-fit: cover;
+	transition: transform var(--transition-speed) ease;
 }
 
 /* --- Effet hover amélioré --- */
 .box:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 12px 40px var(--shadow-hover),
-    0 4px 12px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(15px);
+	transform: translateY(-8px) scale(1.02);
+	box-shadow:
+		0 12px 40px var(--shadow-hover),
+		0 4px 12px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(15px);
 }
 
 .box:hover img {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 /* --- États actifs --- */
 .box:active {
-  transform: translateY(-4px) scale(1.01);
-  transition-duration: 0.1s;
+	transform: translateY(-4px) scale(1.01);
+	transition-duration: 0.1s;
 }
 
 /* --- Responsive optimisé --- */
 @media (max-width: 768px) {
-  :root {
-    --navbar-height: 70px;
-  }
+	:root {
+		--navbar-height: 70px;
+	}
 
-  .container {
-    width: 95%;
-    margin: 1rem auto;
-    gap: 1.5rem;
-    min-height: calc(100vh - var(--navbar-height));
-  }
+	.container {
+		width: 95%;
+		margin: 1rem auto;
+		gap: 1.5rem;
+		min-height: calc(100vh - var(--navbar-height));
+	}
 
-  .box img {
-    max-height: 180px;
-    /* Réduit de 250px à 180px */
-  }
+	.box img {
+		max-height: 180px;
+		/* Réduit de 250px à 180px */
+	}
 
-  .box:hover {
-    transform: translateY(-4px) scale(1.01);
-  }
+	.box:hover {
+		transform: translateY(-4px) scale(1.01);
+	}
 }
 
 @media (max-width: 480px) {
-  .container {
-    width: 100%;
-    padding: 0.5rem;
-    gap: 1rem;
-  }
+	.container {
+		width: 100%;
+		padding: 0.5rem;
+		gap: 1rem;
+	}
 
-  .box {
-    border-radius: 8px;
-  }
+	.box {
+		border-radius: 8px;
+	}
 
-  .box img {
-    max-height: 150px;
-    /* Réduit de 200px à 150px */
-  }
+	.box img {
+		max-height: 150px;
+		/* Réduit de 200px à 150px */
+	}
 
-  .box:hover {
-    transform: translateY(-2px);
-  }
+	.box:hover {
+		transform: translateY(-2px);
+	}
 }
 
 /* --- Animation d'entrée --- */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .box {
-  animation: fadeInUp 0.6s ease-out backwards;
+	animation: fadeInUp 0.6s ease-out backwards;
 }
 
 .box:nth-child(2) {
-  animation-delay: 0.1s;
+	animation-delay: 0.1s;
 }
 
 .box:nth-child(3) {
-  animation-delay: 0.2s;
+	animation-delay: 0.2s;
 }
 
 .box:nth-child(4) {
-  animation-delay: 0.3s;
+	animation-delay: 0.3s;
 }
 
 /* --- Amélioration accessibilité --- */
 @media (prefers-reduced-motion: reduce) {
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }
