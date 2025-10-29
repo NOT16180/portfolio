@@ -25,6 +25,7 @@ body {
 	color: var(--text-color);
 	min-height: 100vh;
 	overflow-x: hidden;
+	padding: 0 1rem;
 }
 
 .wrapper {
@@ -79,6 +80,7 @@ h1 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin: 7px;
 }
 
 .card:hover,
@@ -94,7 +96,7 @@ h1 {
 	height: auto;
 	display: block;
 	object-fit: cover;
-	aspect-ratio: 16/9;
+	aspect-ratio: 3/4;
 	/* Consistent image ratios */
 }
 
