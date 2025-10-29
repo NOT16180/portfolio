@@ -148,7 +148,8 @@ button {
 		border-color var(--transition-speed) var(--transition-smooth);
 	border-radius: var(--border-radius);
 	padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
-	border: 2px solid #000; /* bordure noire */
+	border: 2px solid #000;
+	/* bordure noire */
 	font-size: clamp(14px, 2vw, 16px);
 	font-family: inherit;
 	font-weight: 400;
@@ -235,5 +236,34 @@ button:focus {
 	.box:hover {
 		background: initial;
 		color: initial;
+	}
+}
+
+
+/* PC et écrans larges */
+@media (min-width: 768px) {
+	body {
+		align-items: flex-start;
+		/* aligne horizontalement à gauche */
+		justify-content: flex-start;
+		/* aligne verticalement en haut */
+		padding-left: 2rem;
+		/* espace à gauche */
+		padding-top: var(--navbar-height);
+		/* espace en haut pour navbar */
+	}
+
+	.main-content {
+		align-items: flex-start;
+		justify-content: flex-start;
+		text-align: left;
+		width: 100%;
+		/* pour que le contenu prenne toute la largeur disponible */
+	}
+
+	.welcome {
+		align-items: flex-start;
+		text-align: left;
+		width: 100%;
 	}
 }
