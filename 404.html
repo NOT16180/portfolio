@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page non trouvée - NOT Gallery</title>
+	<style>
+		body {
+			font-family: 'Silkscreen', sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+			background: #f8f8f8;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.container {
+			max-width: 600px;
+		}
+
+		h1 {
+			font-size: 4rem;
+			margin: 0;
+		}
+
+		p {
+			font-size: 1.2rem;
+			margin: 20px 0;
+		}
+
+		a {
+			color: #333;
+			text-decoration: underline;
+		}
+	</style>
+	<script>
+		// Redirection automatique des anciennes URLs
+		(function () {
+			const path = window.location.pathname;
+
+			// Rediriger .html vers les dossiers
+			const redirects = {
+				'/contact.html': '/contact/',
+				'/illustration.html': '/illustration/',
+				'/selection.html': '/selection/',
+				'/linktree.html': '/linktree/',
+				'/purchase.html': '/purchase/'
+			};
+
+			if (redirects[path]) {
+				window.location.replace(redirects[path]);
+			} else {
+				// Afficher la page 404
+				document.addEventListener('DOMContentLoaded', function () {
+					document.getElementById('redirect-msg').style.display = 'none';
+				});
+			}
+		})();
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="redirect-msg">
+			<p>Redirection en cours...</p>
+		</div>
+		<div id="error-msg" style="display: none;">
+			<h1>404</h1>
+			<p>Oups ! Cette page n'existe pas.</p>
+			<p><a href="/">Retour à l'accueil</a></p>
+		</div>
+	</div>
+	<script>
+		// Afficher le message d'erreur si pas de redirection
+		setTimeout(function () {
+			if (window.location.pathname !== '/') {
+				document.getElementById('redirect-msg').style.display = 'none';
+				document.getElementById('error-msg').style.display = 'block';
+			}
+		}, 1000);
+	</script>
+</body>
+
+</html>
