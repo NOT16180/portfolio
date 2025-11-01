@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
       <nav class="navbar">
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
-          <li><a href="/illustration/">Illustration</a></li>
-          <li><a href="/selection/">Selection</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/linktree/">Links</a></li>
-          <li><a href="/purchase/">Purchase</a></li>
+          <li><a href="/illustration">Illustration</a></li>
+          <li><a href="/selection">Selection</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/linktree">Links</a></li>
+          <li><a href="/purchase">Purchase</a></li>
         </ul>
       </nav>
     `;
