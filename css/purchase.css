@@ -26,6 +26,8 @@ body {
 	min-height: 100vh;
 	overflow-x: hidden;
 	padding: 0 1rem;
+	padding-top: 150px;
+
 }
 
 .wrapper {
