@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Toujours charger depuis la racine avec un chemin absolu
-  const navbarPath = "/partials/navbar.html";
+  const navbarPath = "../partials/navbar.html";
 
   // Charger la navbar
   fetch(navbarPath)
