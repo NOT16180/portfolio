@@ -33,7 +33,6 @@ body {
 	background: var(--container-bg);
 	padding: var(--container-padding);
 	border: 1px solid var(--border-color);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	width: 100%;
 	max-width: 600px;
 	margin: 8rem 0 2rem 0;
