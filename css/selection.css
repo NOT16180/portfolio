@@ -60,7 +60,7 @@ footer,
 	position: relative;
 	border-radius: var(--border-radius);
 	overflow: hidden;
-	border: 1px solid black;
+	border: 2px solid black;
 	transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 	background: transparent;
 	/* Pas de fond par défaut */

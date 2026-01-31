@@ -126,7 +126,7 @@ button:hover {
 	font-size: var(--font-size);
 	background: var(--accent-color);
 	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 2px solid rgba(255, 255, 255, 0.2);
 	transition: box-shadow var(--transition-speed) ease;
 }
 
