@@ -70,7 +70,6 @@ h1 {
 
 .card {
 	background-color: var(--card-bg);
-	border-radius: var(--card-radius);
 	overflow: hidden;
 	text-decoration: none;
 	color: inherit;

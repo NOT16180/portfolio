@@ -25,7 +25,6 @@ body {
 	padding: 1rem;
 
 	margin: 0;
-	overflow: hidden;
 
 
 }
@@ -33,12 +32,11 @@ body {
 .contact-container {
 	background: var(--container-bg);
 	padding: var(--container-padding);
-	border-radius: 12px;
 	border: 1px solid var(--border-color);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	width: 100%;
 	max-width: 600px;
-  margin: 8rem 0 2rem 0;
+	margin: 8rem 0 2rem 0;
 
 }
 
@@ -60,7 +58,6 @@ select {
 	margin-top: 0.5rem;
 	padding: var(--input-padding);
 	border: 1px solid var(--border-color);
-	border-radius: 8px;
 	box-sizing: border-box;
 }
 
@@ -75,9 +72,9 @@ button {
 	background-color: var(--button-bg);
 	color: white;
 	border: none;
-	border-radius: 8px;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	font-family: inherit;
 }
 
 button:hover {
@@ -95,7 +92,6 @@ button:hover {
 #form-message {
 	margin-top: 1.5rem;
 	padding: 1rem;
-	border-radius: 8px;
 	display: none;
 	text-align: center;
 }

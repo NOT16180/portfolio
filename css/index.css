@@ -7,7 +7,6 @@
 	--transition-speed: 0.3s;
 	--transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 	--navbar-height: 80px;
-	--border-radius: 8px;
 
 	/* Système de tailles responsive */
 	--social-size: clamp(14px, 2.5vw, 24px);
@@ -87,47 +86,6 @@ footer {
 	margin: 0;
 }
 
-/* --- Liens sociaux optimisés --- */
-.social-links {
-	position: fixed;
-	bottom: clamp(8px, 2vh, 15px);
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	justify-content: center;
-	gap: var(--social-margin);
-	z-index: 100;
-	padding: 0.5rem;
-	backdrop-filter: blur(10px);
-	border-radius: calc(var(--border-radius) * 2);
-	background: rgba(0, 0, 0, 0.1);
-}
-
-.fa {
-	padding: var(--social-padding);
-	font-size: var(--social-size);
-	width: calc(var(--social-size) + var(--social-padding) * 2);
-	height: calc(var(--social-size) + var(--social-padding) * 2);
-	text-align: center;
-	text-decoration: none;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: var(--secondary-color);
-	transition:
-		background-color var(--transition-speed) ease,
-		box-shadow var(--transition-speed) ease;
-	backdrop-filter: blur(5px);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.fa:hover {
-	background-color: rgba(0, 0, 0, 0.95);
-	box-shadow: 0 4px 15px var(--shadow-color);
-}
-
 /* --- Bouton principal optimisé --- */
 
 button {
@@ -146,10 +104,7 @@ button {
 		background var(--transition-speed) var(--transition-smooth),
 		color var(--transition-speed) var(--transition-smooth),
 		border-color var(--transition-speed) var(--transition-smooth);
-	border-radius: var(--border-radius);
 	padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
-	border: 2px solid #000;
-	/* bordure noire */
 	font-size: clamp(14px, 2vw, 16px);
 	font-family: inherit;
 	font-weight: 400;
@@ -163,11 +118,6 @@ button:hover {
 	color: var(--primary-color);
 	border-color: rgba(0, 0, 0, 1);
 }
-
-button:active {
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
 /* --- Boîtes (si utilisées) --- */
 .box {
 	width: var(--box-width);
@@ -176,13 +126,16 @@ button:active {
 	font-size: var(--font-size);
 	background: var(--accent-color);
 	backdrop-filter: blur(10px);
-	border-radius: var(--border-radius);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	transition: box-shadow var(--transition-speed) ease;
 }
 
 .box:hover {
 	box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.box:active {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Media queries simplifiées --- */
