@@ -1,132 +1,132 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-	--nav-bg-color: transparent;
-	--nav-text-color: #333;
-	--nav-hover-color: #000;
-	--nav-active-border: 1px solid #000;
-	--nav-padding: 1rem 2rem;
-	--nav-gap: 2rem;
-	--nav-font-size: 1rem;
-	--nav-transition: all 0.3s ease;
-	--max-content-width: 1200px;
+    --nav-bg-color: transparent;
+    --nav-text-color: #333;
+    --nav-hover-color: #000;
+    --nav-active-border: 1px solid #000;
+    --nav-padding: 1rem 2rem;
+    --nav-gap: 2rem;
+    --nav-font-size: 1rem;
+    --nav-transition: all 0.3s ease;
+    --max-content-width: 1200px;
 }
 
 /* ===== BASE NAVBAR STYLES ===== */
 .navbar {
-	position: fixed;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100%;
-	padding: var(--nav-padding);
-	z-index: 1000;
-	background-color: var(--nav-bg-color);
-	transition: var(--nav-transition);
-	backdrop-filter: blur(5px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-bottom: 1px solid #000;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: var(--nav-padding);
+    z-index: 1000;
+    background-color: var(--nav-bg-color);
+    transition: var(--nav-transition);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #000;
 }
 
 .navbar-container {
-	width: 100%;
-	max-width: var(--max-content-width);
-	display: flex;
-	justify-content: center;
-	margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-content-width);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 /* ===== NAVIGATION LIST ===== */
 .nav-list {
-	display: flex;
-	gap: var(--nav-gap);
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	justify-content: center;
-	align-items: center;
+    display: flex;
+    gap: var(--nav-gap);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===== NAVIGATION LINKS ===== */
 .nav-list a {
-	text-decoration: none;
-	color: var(--nav-text-color);
-	font-size: var(--nav-font-size);
-	font-weight: 400;
-	letter-spacing: 0.5px;
-	transition: var(--nav-transition);
-	padding: 0.5rem 1rem;
-	position: relative;
-	white-space: nowrap;
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-size: var(--nav-font-size);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: var(--nav-transition);
+    padding: 0.5rem 1rem;
+    position: relative;
+    white-space: nowrap;
 }
 
 /* ===== INTERACTIVE STATES ===== */
 .nav-list a:hover {
-	color: var(--nav-hover-color);
+    color: var(--nav-hover-color);
 }
 
 .nav-list .active {
-	border-bottom: var(--nav-active-border);
+    border-bottom: var(--nav-active-border);
 }
 
 /* ===== HOVER ANIMATION ===== */
 .nav-list a::after {
-	content: "";
-	position: absolute;
-	width: 0;
-	height: 2px;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: var(--nav-hover-color);
-	transition: var(--nav-transition);
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--nav-hover-color);
+    transition: var(--nav-transition);
 }
 
 .nav-list a:hover::after {
-	width: calc(100% - 2rem);
+    width: calc(100% - 2rem);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 /* Large tablets and small desktops */
 @media (max-width: 1024px) {
-	:root {
-		--nav-gap: 1.5rem;
-		--nav-font-size: 0.9rem;
-	}
+    :root {
+        --nav-gap: 1.5rem;
+        --nav-font-size: 0.9rem;
+    }
 }
 
 /* Tablets */
 @media (max-width: 768px) {
-	:root {
-		--nav-gap: 1rem;
-		--nav-font-size: 0.8rem;
-		--nav-padding: 0.8rem 1rem;
-	}
+    :root {
+        --nav-gap: 1rem;
+        --nav-font-size: 0.8rem;
+        --nav-padding: 0.8rem 1rem;
+    }
 }
 
 /* Small tablets */
 @media (max-width: 600px) {
-	.nav-list {
-		flex-wrap: wrap;
-		gap: 0.8rem;
-	}
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
 }
 
 /* Mobile phones */
 @media (max-width: 480px) {
-	:root {
-		--nav-font-size: 0.7rem;
-		--nav-gap: 0.5rem;
-	}
+    :root {
+        --nav-font-size: 0.7rem;
+        --nav-gap: 0.5rem;
+    }
 
-	.nav-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-	.nav-list a {
-		padding: 0.3rem 0.5rem;
-	}
+    .nav-list a {
+        padding: 0.3rem 0.5rem;
+    }
 }

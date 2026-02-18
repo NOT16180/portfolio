@@ -1,222 +1,208 @@
 /* --- Variables CSS optimisées --- */
 :root {
-	--primary-color: #282828;
-	--secondary-color: #ffffff;
-	--accent-color: rgba(255, 255, 255, 0.1);
-	--shadow-color: rgba(0, 0, 0, 0.3);
-	--transition-speed: 0.3s;
-	--transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-	--navbar-height: 80px;
+    --primary-color: #282828;
+    --secondary-color: #ffffff;
+    --accent-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --transition-speed: 0.3s;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --navbar-height: 80px;
 
-	/* Système de tailles responsive */
-	--social-size: clamp(14px, 2.5vw, 24px);
-	--social-padding: clamp(6px, 1.5vw, 12px);
-	--social-margin: clamp(4px, 1vw, 10px);
-	--box-width: clamp(100px, 20vw, 180px);
-	--box-padding: clamp(10px, 2vw, 20px);
-	--font-size: clamp(12px, 2vw, 18px);
+    /* Système de tailles responsive */
+    --social-size: clamp(14px, 2.5vw, 24px);
+    --social-padding: clamp(6px, 1.5vw, 12px);
+    --social-margin: clamp(4px, 1vw, 10px);
+    --box-width: clamp(100px, 20vw, 180px);
+    --box-padding: clamp(10px, 2vw, 20px);
+    --font-size: clamp(12px, 2vw, 18px);
 }
-
 
 html,
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
-	/* autorise le scroll si nécessaire */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* autorise le scroll si nécessaire */
 }
 
-
-
 p {
-	color: black;
+    color: black;
 }
 
 h1 {
-	margin-bottom: 1.5rem;
-	color: black;
+    margin-bottom: 1.5rem;
+    color: black;
 }
 
 /* --- Reset et base optimisés --- */
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	background: url(../images/IMG_1741.JPG) no-repeat center/cover fixed;
-	background-color: var(--secondary-color);
-	font-family: "Silkscreen", sans-serif;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	padding-top: var(--navbar-height);
-	color: var(--primary-color);
+    background: url(../images/IMG_1741.JPG) no-repeat center/cover fixed;
+    background-color: var(--secondary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
 /* Conteneur pour le contenu central */
 .main-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-	/* prend tout l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* prend tout l'espace disponible */
 }
-
 
 footer {
-	padding: 10px;
-	text-align: center;
+    padding: 10px;
+    text-align: center;
 }
-
 
 /* Section d'accueil */
 .welcome {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	flex-direction: column;
-	gap: 1rem;
-	margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
 }
 
 /* --- Bouton principal optimisé --- */
 
 button {
-	border-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: linear-gradient(135deg, #000 0%, #333 100%);
-	color: var(--secondary-color);
-	cursor: pointer;
-	transition:
-		background var(--transition-speed) var(--transition-smooth),
-		color var(--transition-speed) var(--transition-smooth),
-		border-color var(--transition-speed) var(--transition-smooth);
-	padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
-	font-size: clamp(14px, 2vw, 16px);
-	font-family: inherit;
-	font-weight: 400;
-	letter-spacing: 0.5px;
-	backdrop-filter: blur(10px);
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition:
+        background var(--transition-speed) var(--transition-smooth),
+        color var(--transition-speed) var(--transition-smooth),
+        border-color var(--transition-speed) var(--transition-smooth);
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
 }
 
-
 button:hover {
-	background: linear-gradient(135deg, var(--secondary-color) 0%, #f0f0f0 100%);
-	color: var(--primary-color);
-	border-color: rgba(0, 0, 0, 1);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color) 0%,
+        #f0f0f0 100%
+    );
+    color: var(--primary-color);
+    border-color: rgba(0, 0, 0, 1);
 }
 /* --- Boîtes (si utilisées) --- */
 .box {
-	width: var(--box-width);
-	padding: var(--box-padding);
-	margin: clamp(15px, 3vw, 20px) 0;
-	font-size: var(--font-size);
-	background: var(--accent-color);
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	transition: box-shadow var(--transition-speed) ease;
+    width: var(--box-width);
+    padding: var(--box-padding);
+    margin: clamp(15px, 3vw, 20px) 0;
+    font-size: var(--font-size);
+    background: var(--accent-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: box-shadow var(--transition-speed) ease;
 }
 
 .box:hover {
-	box-shadow: 0 8px 25px var(--shadow-color);
-}
-
-.box:active {
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 /* --- Media queries simplifiées --- */
 @media (max-width: 480px) {
-	:root {
-		--navbar-height: 70px;
-	}
+    :root {
+        --navbar-height: 70px;
+    }
 
-	.social-links {
-		padding: 0.3rem;
-		gap: calc(var(--social-margin) * 0.8);
-	}
+    .social-links {
+        padding: 0.3rem;
+        gap: calc(var(--social-margin) * 0.8);
+    }
 
-	button {
-		font-size: 14px;
-		padding: 10px 18px;
-	}
+    button {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
 }
-
 
 /* --- Accessibilité --- */
 @media (prefers-reduced-motion: reduce) {
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-	}
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* --- États focus pour accessibilité --- */
 .fa:focus {
-	outline: 2px solid var(--secondary-color);
-	outline-offset: 2px;
-}
-
-button:focus {
-	outline: 2px solid var(--secondary-color);
-	outline-offset: 2px;
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
 }
 
 @media (hover: none) {
-	.fa:hover {
-		background: initial;
-		color: initial;
-	}
+    .fa:hover {
+        background: initial;
+        color: initial;
+    }
 
-	button:hover,
-	.box:hover {
-		background: initial;
-		color: initial;
-	}
+    button:hover,
+    .box:hover {
+        background: initial;
+        color: initial;
+    }
 }
-
 
 /* PC et écrans larges */
 @media (min-width: 768px) {
-	body {
-		align-items: flex-start;
-		/* aligne horizontalement à gauche */
-		justify-content: flex-start;
-		/* aligne verticalement en haut */
-		padding-left: 2rem;
-		/* espace à gauche */
-		padding-top: var(--navbar-height);
-		/* espace en haut pour navbar */
-	}
+    body {
+        align-items: flex-start;
+        /* aligne horizontalement à gauche */
+        justify-content: flex-start;
+        /* aligne verticalement en haut */
+        padding-left: 2rem;
+        /* espace à gauche */
+        padding-top: var(--navbar-height);
+        /* espace en haut pour navbar */
+    }
 
-	.main-content {
-		align-items: flex-start;
-		justify-content: flex-start;
-		text-align: left;
-		width: 100%;
-		/* pour que le contenu prenne toute la largeur disponible */
-	}
+    .main-content {
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        /* pour que le contenu prenne toute la largeur disponible */
+    }
 
-	.welcome {
-		align-items: flex-start;
-		text-align: left;
-		width: 100%;
-	}
+    .welcome {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+    }
 }

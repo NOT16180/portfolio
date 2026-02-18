@@ -1,183 +1,182 @@
 /* --- Variables CSS --- */
 :root {
-	--bg-color: white;
-	--text-color: #282828;
-	--shadow-light: rgba(0, 0, 0, 0.1);
-	--shadow-hover: rgba(0, 0, 0, 0.15);
-	--transition-speed: 0.3s;
+    --bg-color: white;
+    --text-color: #282828;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
 }
 
 .intro {
-	padding-top: var(--navbar-height, 100px);
+    padding-top: var(--navbar-height, 100px);
 }
 
 p {
-	color: black;
+    color: black;
 }
 
 /* --- Reset et base --- */
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body {
-	background: url(../images/IMG_1434.JPG) no-repeat center/cover fixed;
-	min-height: 100vh;
-	background-color: var(--bg-color);
-	color: var(--text-color);
-	font-family: "Silkscreen", sans-serif;
-	margin: 0;
-	padding: 0;
+    background: url(../images/IMG_1434.JPG) no-repeat center/cover fixed;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
 }
 
 /* --- Texte centré --- */
 .intro,
 footer,
 .block {
-	text-align: center;
+    text-align: center;
 }
 
 /* --- Conteneur centré optimisé --- */
 .container {
-	padding-top: var(--navbar-height, 40px);
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
-	width: min(85%, 700px);
-	margin: 2rem auto;
-	min-height: auto;
+    padding-top: var(--navbar-height, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: min(85%, 700px);
+    margin: 2rem auto;
+    min-height: auto;
 }
 
 /* --- Liens conteneurs --- */
 .container a {
-	width: 100%;
-	display: block;
-	text-decoration: none;
-	position: relative;
-	overflow: hidden;
-	border: 1px solid black;
-	transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-	background: transparent;
-	/* Pas de fond par défaut */
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    /* Pas de fond par défaut */
 }
 
 /* --- Images NORMALES par défaut --- */
 .box {
-	display: block;
-	width: 100%;
-	height: auto;
-	object-fit: cover;
-	transition:
-		opacity var(--transition-speed) ease,
-		transform var(--transition-speed) ease,
-		filter var(--transition-speed) ease;
-	border: none;
-	opacity: 1;
-	/* Image visible à 100% */
-	filter: none;
-	/* Pas de filtre par défaut */
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition:
+        opacity var(--transition-speed) ease,
+        transform var(--transition-speed) ease,
+        filter var(--transition-speed) ease;
+    border: none;
+    opacity: 1;
+    /* Image visible à 100% */
+    filter: none;
+    /* Pas de filtre par défaut */
 }
 
 /* --- HOVER : Image transparente + floue --- */
 .container a:hover {
-	transform: translateY(-6px) scale(1.02);
-	backdrop-filter: blur(8px) saturate(200%);
-	-webkit-backdrop-filter: blur(30px) saturate(200%);
-	background: rgba(255, 255, 255, 0.05);
-	/* Très transparent */
+    transform: translateY(-6px) scale(1.02);
+    backdrop-filter: blur(8px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    background: rgba(255, 255, 255, 0.05);
+    /* Très transparent */
 }
 
 .container a:hover .box {
-	opacity: 0.25;
-	/* Image devient très transparente */
-	transform: scale(1.05);
-	filter: blur(2px) brightness(1);
-	/* Flou + luminosité */
+    opacity: 0.25;
+    /* Image devient très transparente */
+    transform: scale(1.05);
+    filter: blur(2px) brightness(1);
+    /* Flou + luminosité */
 }
 
 /* --- Responsive optimisé --- */
 @media (max-width: 768px) {
-	:root {
-		--navbar-height: 70px;
-	}
+    :root {
+        --navbar-height: 70px;
+    }
 
-	.container {
-		width: 95%;
-		margin: 1rem auto;
-		gap: 1.5rem;
-	}
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+        gap: 1.5rem;
+    }
 
-	.container a:hover {
-		transform: translateY(-4px) scale(1.01);
-		backdrop-filter: blur(25px) saturate(180%);
-		-webkit-backdrop-filter: blur(25px) saturate(180%);
-	}
+    .container a:hover {
+        transform: translateY(-4px) scale(1.01);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+    }
 
-	.container a:hover .box {
-		filter: blur(2px) brightness(1.15);
-	}
+    .container a:hover .box {
+        filter: blur(2px) brightness(1.15);
+    }
 }
 
 @media (max-width: 480px) {
-	.container {
-		width: 100%;
-		padding: 0.5rem;
-		gap: 1rem;
-	}
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+        gap: 1rem;
+    }
 
-	.container a {
-		border: 1px solid black;
-	}
+    .container a {
+        border: 1px solid black;
+    }
 
-	.container a:hover {
-		transform: translateY(-2px);
-		backdrop-filter: blur(20px) saturate(160%);
-		-webkit-backdrop-filter: blur(20px) saturate(160%);
-	}
+    .container a:hover {
+        transform: translateY(-2px);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+    }
 
-	.container a:hover .box {
-		opacity: 0.3;
-		filter: blur(2px) brightness(1.1);
-	}
+    .container a:hover .box {
+        opacity: 0.3;
+        filter: blur(2px) brightness(1.1);
+    }
 }
 
 /* --- Animation d'entrée --- */
 @keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(30px);
-	}
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .container a {
-	animation: fadeInUp 0.6s ease-out backwards;
+    animation: fadeInUp 0.6s ease-out backwards;
 }
 
 .container:nth-child(2) a {
-	animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .container:nth-child(3) a {
-	animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 /* --- Amélioration accessibilité --- */
 @media (prefers-reduced-motion: reduce) {
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-	}
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
