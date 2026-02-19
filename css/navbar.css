@@ -133,3 +133,8 @@
         padding: 0.3rem 0.5rem;
     }
 }
+
+/* Protection navbar */
+.nav-list a {
+    font-size: var(--nav-font-size) !important;
+}

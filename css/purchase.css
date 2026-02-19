@@ -19,11 +19,10 @@ body {
     background: url(../images/IMG_1501.JPG) no-repeat center/cover fixed;
     background-color: var(--bg-color);
     margin: 0;
+    padding: 0;
     color: var(--text-color);
     min-height: 100vh;
     overflow-x: hidden;
-    padding: 0 1rem;
-    padding-top: 150px;
     font-family: "Inconsolata", monospace;
 }
 
@@ -37,8 +36,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 60vh;
-    padding-top: var(--navbar-height, 80px);
-    /* espace pour navbar */
+    padding-top: var(--navbar-height, 150px);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 footer {
@@ -49,7 +49,7 @@ footer {
     color: var(--text-color, #222);
 }
 
-h1 {
+.wrapper h1 {
     font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: var(--gap-desktop);
     font-weight: normal;
@@ -93,13 +93,11 @@ h1 {
     display: block;
     object-fit: cover;
     aspect-ratio: 3/4;
-    /* Consistent image ratios */
 }
 
 .card h2 {
     margin: 1rem;
     font-size: clamp(1.1rem, 3vw, 1.4rem);
-
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-weight: bold;
@@ -121,7 +119,6 @@ h1 {
         gap: var(--gap-desktop);
         width: 100%;
     }
-
     .card {
         width: var(--card-width);
         flex-shrink: 0;
@@ -140,7 +137,6 @@ h1 {
     .card {
         transition: none;
     }
-
     .card:hover,
     .card:focus-visible {
         transform: none;
