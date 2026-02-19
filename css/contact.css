@@ -20,8 +20,10 @@ body {
     align-items: flex-start;
     min-height: 100vh;
     padding: 1rem;
+
     margin: 0;
-    text-transform: uppercase;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
 }
 
 .contact-container {
@@ -31,8 +33,9 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 8rem 0 2rem 0;
+    font-family: "Inconsolata", monospace;
     text-transform: uppercase;
-    font-weight: bold;
+    font-optical-sizing: auto;
 }
 
 h2 {
@@ -75,8 +78,14 @@ button {
 }
 
 button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color) 0%,
+        #f0f0f0 100%
+    );
+    color: var(--primary-color);
+    border-color: rgba(0, 0, 0, 1);
+    border: 1px solid #212121;
 }
 
 .email-display {

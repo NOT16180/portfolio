@@ -52,7 +52,8 @@ body {
     min-height: 100vh;
     padding-top: var(--navbar-height);
     color: var(--primary-color);
-    text-transform: uppercase;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
 }
 
 /* Conteneur pour le contenu central */
@@ -100,14 +101,23 @@ button {
         color var(--transition-speed) var(--transition-smooth),
         border-color var(--transition-speed) var(--transition-smooth);
     padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
-    font-size: clamp(14px, 2vw, 16px);
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
     backdrop-filter: blur(10px);
     text-transform: uppercase;
 }
 
 button:hover {
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color) 0%,
+        #f0f0f0 100%
+    );
+    color: var(--primary-color);
+    border-color: rgba(0, 0, 0, 1);
+}
+
+button:active {
     background: linear-gradient(
         135deg,
         var(--secondary-color) 0%,

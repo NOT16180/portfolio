@@ -5,8 +5,10 @@
 
 body {
     font-size: var(--base-font-size);
+
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
 h1,

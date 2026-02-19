@@ -52,8 +52,11 @@
 .nav-list a {
     text-decoration: none;
     color: var(--nav-text-color);
+
+    font-family: "Inconsolata", monospace;
+    text-transform: uppercase;
+    font-optical-sizing: auto;
     font-size: var(--nav-font-size);
-    font-weight: bold;
     letter-spacing: 0.5px;
     transition: var(--nav-transition);
     padding: 0.5rem 1rem;

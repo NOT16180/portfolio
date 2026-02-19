@@ -15,7 +15,8 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    text-transform: uppercase;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
 }
 
 .container {
