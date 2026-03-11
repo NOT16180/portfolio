@@ -29,14 +29,6 @@
     border-bottom: 1px solid #000;
 }
 
-.navbar-container {
-    width: 100%;
-    max-width: var(--max-content-width);
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-
 /* ===== NAVIGATION LIST ===== */
 .nav-list {
     display: flex;
@@ -44,15 +36,28 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: var(--max-content-width);
+}
+
+/* Élément fantôme à gauche pour contrebalancer le Ko-fi à droite */
+.nav-list::before {
+    content: "";
+    flex: 1;
+}
+
+/* Ko-fi poussé à droite */
+.nav-list li:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 /* ===== NAVIGATION LINKS ===== */
 .nav-list a {
     text-decoration: none;
     color: var(--nav-text-color);
-
     font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-optical-sizing: auto;
@@ -91,7 +96,6 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-/* Large tablets and small desktops */
 @media (max-width: 1024px) {
     :root {
         --nav-gap: 1.5rem;
@@ -99,7 +103,6 @@
     }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
     :root {
         --nav-gap: 1rem;
@@ -108,7 +111,6 @@
     }
 }
 
-/* Small tablets */
 @media (max-width: 600px) {
     .nav-list {
         flex-wrap: wrap;
@@ -116,7 +118,6 @@
     }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
     :root {
         --nav-font-size: 0.7rem;
@@ -124,8 +125,16 @@
     }
 
     .nav-list {
-        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-list::before {
+        display: none;
+    }
+
+    .nav-list li:last-child {
+        flex: unset;
         justify-content: center;
     }
 
