@@ -120,13 +120,15 @@
 
 @media (max-width: 480px) {
     :root {
-        --nav-font-size: 0.7rem;
-        --nav-gap: 0.5rem;
+        --nav-font-size: 0.65rem;
+        --nav-gap: 0.3rem;
+        --nav-padding: 0.5rem 0.5rem;
     }
 
     .nav-list {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0;
     }
 
     .nav-list::before {
@@ -139,7 +141,8 @@
     }
 
     .nav-list a {
-        padding: 0.3rem 0.5rem;
+        padding: 0.25rem 0.4rem;
+        white-space: nowrap;
     }
 }
 

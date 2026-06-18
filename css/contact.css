@@ -17,10 +17,10 @@ body {
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
     padding: 1rem;
-
     margin: 0;
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
@@ -32,7 +32,9 @@ body {
     border: 1px solid var(--border-color);
     width: 100%;
     max-width: 600px;
-    margin: 8rem 0 2rem 0;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    margin: 0;
     font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-optical-sizing: auto;

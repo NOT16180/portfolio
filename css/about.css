@@ -1,0 +1,72 @@
+body {
+    background: url(../images/thought.JPEG) no-repeat center/cover fixed;
+    color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    overflow: hidden;
+    padding: 1rem;
+    margin: 0;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+}
+
+.about-container {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 600px;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    margin: 0;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0 0 1rem 0;
+    line-height: 1.7;
+}
+
+.about-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.about-links a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.about-links a:hover {
+    opacity: 0.5;
+}
+
+footer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+        align-items: center;
+    }
+
+    .about-container {
+        margin: 1rem 0;
+    }
+}
