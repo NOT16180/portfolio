@@ -1,10 +1,18 @@
 body {
+    margin: 0;
     text-align: center;
     box-sizing: border-box;
     background-color: white;
-    padding-top: 80px; /* Ajuste selon la hauteur de ta navbar */
+    padding-top: var(--navbar-height, 80px);
     color: #282828;
     font-family: "Inconsolata", monospace;
+}
+
+.intro {
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
 }
 
 .container {

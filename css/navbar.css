@@ -1,5 +1,6 @@
 /* ===== CSS VARIABLES ===== */
 :root {
+    --navbar-height: 80px;
     --nav-bg-color: transparent;
     --nav-text-color: #333;
     --nav-hover-color: #000;

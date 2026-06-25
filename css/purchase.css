@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+    padding-top: var(--navbar-height, 80px);
     color: var(--text-color);
     min-height: 100vh;
     overflow-x: hidden;
@@ -30,10 +31,10 @@ body {
 }
 
 .intro {
-    padding-top: var(--navbar-height, 100px);
+    padding: 1rem 0;
     text-align: center;
     width: 100%;
-    margin: 0 0 1rem;
+    margin: 0;
 }
 
 .wrapper {

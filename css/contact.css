@@ -17,11 +17,11 @@ body {
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     min-height: 100dvh;
     box-sizing: border-box;
-    padding: 64px 1rem 1rem;
+    padding: var(--navbar-height, 80px) 1rem 1rem;
     margin: 0;
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
@@ -132,7 +132,7 @@ footer {
     }
 
     body {
-        padding: 64px 0.5rem 0.5rem;
+        padding: var(--navbar-height, 80px) 0.5rem 0.5rem;
         align-items: center;
     }
 
