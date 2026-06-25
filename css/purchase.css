@@ -16,7 +16,7 @@
 }
 
 body {
-    background: url(../images/IMG_1501.JPG) no-repeat center/cover fixed;
+    background: url(../images/child_top.JPEG) no-repeat center/cover fixed;
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
@@ -24,6 +24,16 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: "Inconsolata", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro {
+    padding-top: var(--navbar-height, 100px);
+    text-align: center;
+    width: 100%;
+    margin: 0 0 1rem;
 }
 
 .wrapper {
@@ -35,8 +45,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
-    padding-top: var(--navbar-height, 100px);
+    min-height: 40vh;
+    padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }

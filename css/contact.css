@@ -13,13 +13,13 @@
 }
 
 body {
-    background: url(../images/IMG_1443.JPG) no-repeat center/cover fixed;
+    background: url(../images/multipleher.JPG) no-repeat center/cover fixed;
     color: var(--text-color);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100dvh;
-    overflow: hidden;
+    min-height: 100dvh;
     box-sizing: border-box;
     padding: 64px 1rem 1rem;
     margin: 0;
@@ -35,7 +35,7 @@ body {
     max-width: 600px;
     max-height: calc(100vh - 64px - 2rem);
     overflow-y: auto;
-    margin: 0;
+    margin: 1.5rem auto;
     font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-optical-sizing: auto;
@@ -115,6 +115,13 @@ button:hover {
     background-color: var(--error-bg);
     color: #c62828;
     border: 1px solid #ef9a9a;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
 }
 
 /* Media Queries pour différents écrans */

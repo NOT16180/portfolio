@@ -6,9 +6,8 @@
 }
 
 body {
-    background: url(../images/IMG_1528.JPG) no-repeat center/cover fixed;
+    background: url(../images/im_just_workin.JPG) no-repeat center/cover fixed;
     margin: 0;
-    /* Adjust according to your navbar height */
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -19,8 +18,16 @@ body {
     font-optical-sizing: auto;
 }
 
-.container {
+.intro {
     padding-top: 100px;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
+}
+
+.container {
+    padding-top: 0;
     max-width: 500px;
     width: 100%;
     text-align: center;
