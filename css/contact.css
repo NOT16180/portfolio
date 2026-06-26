@@ -132,12 +132,14 @@ footer {
     }
 
     body {
-        padding: var(--navbar-height, 80px) 0.5rem 0.5rem;
+        padding: var(--navbar-height, 80px) 16px 0.5rem;
         align-items: center;
     }
 
     .contact-container {
         margin: 1rem 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
