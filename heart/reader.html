@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lecteur Webcomic</title>
+    </head>
+    <body>
+        <!-- En-tête / Barre d'outils -->
+        <header>
+            <a href="index.html">← Accueil</a>
+            <h1 id="chapter-title">Chargement...</h1>
+
+            <!-- Contrôles -->
+            <div>
+                <label for="chapter-select">Chapitre :</label>
+                <select id="chapter-select">
+                    <option value="1">Chapitre 1</option>
+                    <option value="2">Chapitre 2</option>
+                </select>
+
+                <button id="toggle-mode-btn">Mode : Défilement</button>
+            </div>
+        </header>
+
+        <hr />
+
+        <!-- Zone de lecture -->
+        <main>
+            <!-- Conteneur Mode Défilement (Webtoon) -->
+            <section id="scroll-view">
+                <!-- Les images seront injectées ici par JS -->
+            </section>
+
+            <!-- Conteneur Mode Page par Page -->
+            <section id="paged-view" hidden>
+                <div id="page-container">
+                    <!-- L'image courante sera injectée ici par JS -->
+                </div>
+                <div>
+                    <button id="prev-page-btn">← Précédent</button>
+                    <span id="page-counter">Page 1 / 1</span>
+                    <button id="next-page-btn">Suivant →</button>
+                </div>
+            </section>
+        </main>
+
+        <hr />
+
+        <!-- Navigation bas de page -->
+        <footer>
+            <button id="prev-chapter-btn">← Chapitre Précédent</button>
+            <button id="next-chapter-btn">Chapitre Suivant →</button>
+        </footer>
+
+        <!-- Script externe -->
+        <script src="assets/js/reader.js"></script>
+    </body>
+</html>
