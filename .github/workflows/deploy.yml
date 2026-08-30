@@ -89,6 +89,18 @@ jobs:
             - name: Configuration de GitHub Pages
               uses: actions/configure-pages@v4
 
+            - name: Nettoyage des artefacts précédents
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  echo "=== Recherche d'artefacts existants pour ce run ==="
+                  gh api repos/${{ github.repository }}/actions/artifacts \
+                    --jq '.artifacts[] | select(.workflow_run.id == ${{ github.run_id }}) | .id' \
+                    | while read -r id; do
+                        echo "Suppression artefact ID $id"
+                        gh api -X DELETE repos/${{ github.repository }}/actions/artifacts/$id || true
+                      done
+
             - name: Préparation de l'artefact
               uses: actions/upload-pages-artifact@v3
               with:
