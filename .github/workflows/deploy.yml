@@ -1,4 +1,4 @@
-name: CI/CD - Deploiement Site & Webcomic
+name: CI/CD - Deploiement Site
 on:
     push:
         branches:
