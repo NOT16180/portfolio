@@ -1,0 +1,99 @@
+name: CI/CD - Deploiement Site & Webcomic
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch: # Permet de relancer manuellement depuis l'interface GitHub
+
+# Permissions minimales nécessaires pour GitHub Pages
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+# Annule les builds en cours si un nouveau push arrive sur la même branche
+concurrency:
+    group: "pages"
+    cancel-in-progress: true
+
+jobs:
+    # Étape 1 : Vérifications & Tests de cohérence
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Récupération du code
+              uses: actions/checkout@v4
+
+            - name: Vérification des fichiers JSON et Manifest
+              run: |
+                  echo "=== Validation syntaxique des fichiers JSON ==="
+                  python3 -c "
+                  import json, glob, sys
+
+                  # Exclusion des dossiers techniques qui ne doivent pas être scannés
+                  EXCLUDE = ('node_modules/', '.git/', '.github/')
+
+                  candidates = glob.glob('**/*.json', recursive=True) + glob.glob('**/*.webmanifest', recursive=True)
+                  files = [f for f in candidates if not any(f.startswith(ex) or ('/' + ex) in f for ex in EXCLUDE)]
+
+                  errors = 0
+                  for f in files:
+                      try:
+                          with open(f, 'r', encoding='utf-8') as file:
+                              json.load(file)
+                          print(f'  ✓ {f} valide')
+                      except Exception as e:
+                          print(f'  ✗ ERREUR dans {f} : {e}', file=sys.stderr)
+                          errors += 1
+
+                  if errors > 0:
+                      sys.exit(1)
+                  "
+
+            - name: Vérification des fichiers critiques
+              run: |
+                  echo "=== Vérification des fichiers obligatoires ==="
+
+                  for file in index.html 404.html CNAME; do
+                    if [ ! -f "$file" ]; then
+                      echo "✗ Fichier manquant critique : $file" >&2
+                      exit 1
+                    else
+                      echo "  ✓ $file présent"
+                    fi
+                  done
+
+                  echo "=== Vérification du contenu de CNAME ==="
+                  CNAME_CONTENT=$(cat CNAME | tr -d '[:space:]')
+                  EXPECTED_DOMAIN="notgalerie.com"
+
+                  if [ "$CNAME_CONTENT" != "$EXPECTED_DOMAIN" ]; then
+                    echo "✗ CNAME contient '$CNAME_CONTENT' au lieu de '$EXPECTED_DOMAIN'" >&2
+                    exit 1
+                  else
+                    echo "  ✓ CNAME correspond à $EXPECTED_DOMAIN"
+                  fi
+
+    # Étape 2 : Déploiement sur GitHub Pages (exécuté seulement si la validation réussit)
+    deploy:
+        needs: validate
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        steps:
+            - name: Récupération du code
+              uses: actions/checkout@v4
+
+            - name: Configuration de GitHub Pages
+              uses: actions/configure-pages@v4
+
+            - name: Préparation de l'artefact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: "."
+
+            - name: Déploiement en ligne
+              id: deployment
+              uses: actions/deploy-pages@v4
